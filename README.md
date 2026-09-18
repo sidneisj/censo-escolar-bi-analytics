@@ -18,13 +18,16 @@ Desenvolver um dashboard analítico que permita explorar informações da Educa�
 
 ## 📊 Fonte dos dados
 
-Os dados utilizados são provenientes dos **Microdados do Censo Escolar da Educação Básica**, disponibilizados oficialmente pelo INEP.
+Os dados utilizados neste projeto são provenientes dos **Microdados do Censo Escolar da Educação Básica**, disponibilizados oficialmente pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP).
 
-Fonte oficial:
+**Ano de referência atual:** 2025
 
+**Fonte oficial:**
 https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar
 
-O projeto utiliza os dados oficiais preservando a rastreabilidade da fonte, do período e da versão dos arquivos utilizados.
+Os dados são obtidos diretamente da fonte oficial e mantidos com rastreabilidade de origem, versão e data de obtenção. Os arquivos originais são preservados sem alterações, enquanto os dados tratados serão disponibilizados posteriormente na área `data/processed/`.
+
+Para informações detalhadas sobre a origem, arquivos utilizados, documentação e integridade dos dados, consulte [`documentation/fonte_dados.md`](documentation/fonte_dados.md).
 
 ## 🛠️ Tecnologias
 
