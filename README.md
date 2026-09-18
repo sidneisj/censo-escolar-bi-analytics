@@ -1,2 +1,91 @@
-# censo-escolar-bi-analytics
-Projeto de BI desenvolvido com dados públicos do Censo Escolar/INEP, utilizando Tableau para análise e visualização dos dados.
+# Censo Escolar BI/Analytics
+
+Projeto de Business Intelligence desenvolvido a partir de dados públicos do **Censo Escolar**, disponibilizados pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP).
+
+O projeto tem como objetivo transformar dados educacionais públicos em informações analíticas por meio de processos de tratamento, modelagem e visualização de dados, utilizando **Tableau** como ferramenta de BI.
+
+## 🎯 Objetivo
+
+Desenvolver um dashboard analítico que permita explorar informações da Educação Básica brasileira, possibilitando análises por diferentes dimensões, como:
+
+* evolução ao longo do tempo;
+* localização geográfica;
+* Unidade da Federação;
+* município;
+* características das escolas;
+* matrículas;
+* docentes.
+
+## 📊 Fonte dos dados
+
+Os dados utilizados são provenientes dos **Microdados do Censo Escolar da Educação Básica**, disponibilizados oficialmente pelo INEP.
+
+Fonte oficial:
+
+https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar
+
+O projeto utiliza os dados oficiais preservando a rastreabilidade da fonte, do período e da versão dos arquivos utilizados.
+
+## 🛠️ Tecnologias
+
+* **Tableau** — visualização e desenvolvimento do dashboard
+* **Git / GitHub** — versionamento, documentação e acompanhamento do projeto
+* **SQL / Python** — tratamento e transformação de dados, conforme necessidade das etapas
+* **CSV** — formato dos dados disponibilizados pelo INEP
+
+## 📁 Estrutura do projeto
+
+```text
+censo-escolar-bi/
+│
+├── data/
+│   ├── raw/              # Dados originais
+│   └── processed/        # Dados tratados
+│
+├── documentation/        # Documentação e referências
+│
+├── scripts/              # Scripts de tratamento e transformação
+│
+├── tableau/              # Arquivos relacionados ao Tableau
+│
+└── README.md             # Documentação principal do projeto
+```
+
+## 🚧 Status do projeto
+
+**Em desenvolvimento**
+
+### Fases do projeto
+
+* [x] **M1 — Definição do projeto**
+* [ ] **M2 — Fonte e aquisição dos dados**
+* [ ] **M3 — Exploração e qualidade dos dados**
+* [ ] **M4 — Tratamento e transformação**
+* [ ] **M5 — Modelagem dos dados**
+* [ ] **M6 — Desenvolvimento do dashboard**
+* [ ] **M7 — Validação e documentação**
+* [ ] **M8 — Publicação e apresentação**
+
+Atualmente, o projeto encontra-se na **M2 — Fonte e aquisição dos dados**.
+
+## 📌 Escopo atual
+
+Para a primeira versão do projeto foram selecionadas inicialmente as seguintes bases do Censo Escolar:
+
+* **Tabela Escola**
+* **Tabela Matrícula**
+* **Tabela Docente**
+
+As demais bases poderão ser incorporadas posteriormente caso novas necessidades de análise sejam identificadas.
+
+As bases do Censo Escolar são relacionadas por meio da variável `CO_ENTIDADE`.
+
+## 📚 Documentação
+
+As decisões, atividades e etapas de desenvolvimento são acompanhadas por meio do **GitHub Projects**, utilizando Issues e Milestones.
+
+O histórico do projeto será mantido por meio de commits, documentação e demais artefatos produzidos durante o desenvolvimento.
+
+---
+
+**Projeto desenvolvido para fins de estudo, portfólio profissional e demonstração de práticas de Business Intelligence e análise de dados.**
