@@ -1,0 +1,27 @@
+# ==============================
+# Censo Escolar BI
+# ==============================
+
+# Dados brutos do INEP
+data/raw/*.csv
+
+# Dados processados
+data/processed/*.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Sistema operacional
+Thumbs.db
+.DS_Store
+
+# Arquivos temporários
+*.tmp
+*.temp
+~$
