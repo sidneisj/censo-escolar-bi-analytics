@@ -61,7 +61,7 @@ censo-escolar-bi/
 ### Fases do projeto
 
 * [x] **M1 — Definição do projeto**
-* [ ] **M2 — Fonte e aquisição dos dados**
+* [x] **M2 — Fonte e aquisição dos dados**
 * [ ] **M3 — Exploração e qualidade dos dados**
 * [ ] **M4 — Tratamento e transformação**
 * [ ] **M5 — Modelagem dos dados**
