@@ -1,0 +1,168 @@
+﻿tabela,grupo,variavel,descricao,tipo,categoria,coleta_2025,notas_importantes,primeiro_ano,ultimo_ano,status_coleta,comparabilidade_preliminar
+Escola,Identificação,NU_ANO_CENSO,Ano do Censo,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Identificação,NO_ENTIDADE,Nome da Escola,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Identificação,CO_ENTIDADE,Código da Escola,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Geografia,NO_REGIAO,Nome da Região Geográfica,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Geografia,CO_REGIAO,Código da Região Geográfica,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Geografia,NO_UF,Nome da Unidade da Federação,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Geografia,SG_UF,Sigla da Unidade da Federação,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Geografia,CO_UF,Código da Unidade da Federação,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Geografia,NO_MUNICIPIO,Nome do Município,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Geografia,CO_MUNICIPIO,Código do Município,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Segmentação,TP_DEPENDENCIA,Dependência Administrativa,Num,"1 - Federal
+2 - Estadual
+3 - Municipal
+4 - Privada",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Segmentação,TP_CATEGORIA_ESCOLA_PRIVADA,Categoria da escola privada,Num,"1 - Particular
+2 - Comunitária
+3 - Confessional
+4 - Filantrópica
+   - Não aplicável para escolas públicas",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Segmentação,TP_LOCALIZACAO,Localização,Num,"1 - Urbana
+2 - Rural",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Segmentação,TP_LOCALIZACAO_DIFERENCIADA,Localização diferenciada da escola,Num,"0 - A escola não está em área de localização diferenciada
+1 - Área de assentamento
+2 - Terra indígena
+3 - Comunidade quilombola
+8 - Área onde se localizam povos e comunidades tradicionais",s,"De 2007 a 2011:  
+0 - Não se aplica
+1 - Área de assentamento
+2 - Terra indígena
+3 - Área remanescente de quilombos
+De 2012 a 2018:  
+0 - A escola não está em área de localização diferenciada
+1 - Área de assentamento
+2 - Terra indígena
+3 - Área remanescente de quilombos
+4 - Unidade de uso sustentável
+5 - Unidade de uso sustentável em terra indígena
+6 - Unidade de uso sustentável em área remanescente de quilombos
+De 2019 a 2022: 
+0 - A escola não está em área de localização diferenciada
+1 - Área de assentamento
+2 - Terra indígena
+3 - Área onde se localiza comunidade remanescente de quilombos
+Em 2023 foi adicionada a categoria 8: 
+8 - Área onde se localizam povos e comunidades tradicionais",2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Controle,TP_SITUACAO_FUNCIONAMENTO,Situação de funcionamento,Num,"1 - Em Atividade
+2 - Paralisada
+3 - Extinta (ano do Censo)
+4 - Extinta em Anos Anteriores",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Infraestrutura,IN_INTERNET,Acesso à Internet,Num,"0 - Não
+1 - Sim",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Infraestrutura,IN_BIBLIOTECA,Dependências físicas existentes e utilizadas na escola - Biblioteca,Num,"0 - Não
+1 - Sim",s,,2009.0,2025.0,Coleta iniciada em 2009,Comparável apenas no período de coleta
+Escola,Infraestrutura,IN_SALA_LEITURA,Dependências físicas existentes e utilizadas na escola - Sala de leitura,Num,"0 - Não
+1 - Sim",s,,2009.0,2025.0,Coleta iniciada em 2009,Comparável apenas no período de coleta
+Escola,Infraestrutura,IN_LABORATORIO_CIENCIAS,Dependências físicas existentes e utilizadas na escola - Laboratório de ciências,Num,"0 - Não
+1 - Sim",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Infraestrutura,IN_LABORATORIO_INFORMATICA,Dependências físicas existentes e utilizadas na escola - Laboratório de informática,Num,"0 - Não
+1 - Sim",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Infraestrutura,IN_QUADRA_ESPORTES,Dependências físicas existentes e utilizadas na escola - Quadra de esportes coberta ou descoberta,Num,"0 - Não
+1 - Sim",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Infraestrutura,IN_BANHEIRO_PNE,"Dependências físicas existentes e utilizadas na escola - Banheiro acessível, adequado ao uso de pessoas com deficiência ou mobilidade reduzida",Num,"0 - Não
+1 - Sim",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE,Recursos de acessibilidade para pessoas com deficiência ou mobilidade reduzida nas vias de circulação interna na escola - Nenhum dos recursos de acessibilidade listados,Num,"0 - Não
+1 - Sim",s,,2019.0,2025.0,Coleta iniciada em 2019,Comparável apenas no período de coleta
+Escola,Infraestrutura,IN_AGUA_POTAVEL,Fornece água potável para o consumo humano,Num,"0 - Não
+1 - Sim",s,,2019.0,2025.0,Coleta iniciada em 2019,Comparável apenas no período de coleta
+Escola,Infraestrutura,IN_ESGOTO_REDE_PUBLICA,Esgoto sanitário - Rede pública,Num,"0 - Não
+1 - Sim",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Infraestrutura,IN_ENERGIA_REDE_PUBLICA,Abastecimento de energia elétrica - Rede pública,Num,"0 - Não
+1 - Sim",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Escola,Infraestrutura,QT_SALAS_UTILIZADAS,Número de salas de aula utilizadas na escola (dentro e fora do prédio),Num,,s,"A partir de 2019:
+Variável derivada juntando QT_SALAS_UTILIZADAS_DENTRO e QT_SALAS_UTILIZADAS_FORA",2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Identificação,NU_ANO_CENSO,Ano do Censo,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Identificação,NO_ENTIDADE,Nome da Escola,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Identificação,CO_ENTIDADE,Código da Escola,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Geografia,NO_REGIAO,Nome da Região Geográfica,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Geografia,CO_REGIAO,Código da Região Geográfica,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Geografia,NO_UF,Nome da Unidade da Federação,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Geografia,SG_UF,Sigla da Unidade da Federação,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Geografia,CO_UF,Código da Unidade da Federação,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Geografia,NO_MUNICIPIO,Nome do Município,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Geografia,CO_MUNICIPIO,Código do Município,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Segmentação,TP_DEPENDENCIA,Dependência Administrativa,Num,"1 - Federal
+2 - Estadual
+3 - Municipal
+4 - Privada",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Segmentação,TP_CATEGORIA_ESCOLA_PRIVADA,Categoria da escola privada,Num,"1 - Particular
+2 - Comunitária
+3 - Confessional
+4 - Filantrópica
+   - Não aplicável para escolas públicas",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Segmentação,TP_LOCALIZACAO,Localização,Num,"1 - Urbana
+2 - Rural",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Segmentação,TP_LOCALIZACAO_DIFERENCIADA,Localização diferenciada da escola,Num,"0 - A escola não está em área de localização diferenciada
+1 - Área de assentamento
+2 - Terra indígena
+3 - Comunidade quilombola
+8 - Área onde se localizam povos e comunidades tradicionais",s,"De 2007 a 2011:  
+0 - Não se aplica
+1 - Área de assentamento
+2 - Terra indígena
+3 - Área remanescente de quilombos
+De 2012 a 2018:  
+0 - A escola não está em área de localização diferenciada
+1 - Área de assentamento
+2 - Terra indígena
+3 - Área remanescente de quilombos
+4 - Unidade de uso sustentável
+5 - Unidade de uso sustentável em terra indígena
+6 - Unidade de uso sustentável em área remanescente de quilombos
+De 2019 a 2022: 
+0 - A escola não está em área de localização diferenciada
+1 - Área de assentamento
+2 - Terra indígena
+3 - Área onde se localiza comunidade remanescente de quilombos
+Em 2023 foi adicionada a categoria 8: 
+8 - Área onde se localizam povos e comunidades tradicionais",2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Matricula,Indicador,QT_MAT_BAS,"Número de Matrículas da Educação Básica
+",Num,,s,"Não inclui matrículas em turmas exclusivas de atividade complementar e nem em turmas exclusivas de Atendimento Educacional Especializado. Em síntese, a Educação Básica compreende matrículas nas seguintes etapas e modalidades de ensino: Educação Infantil, Ensino Fundamental, Ensino Médio, Curso Técnico Concomitante, Curso Técnico Subsequente, Itinerário Formativo Técnico Profissional Exclusivo - Curso Técnico (não articulado ao ensino médio regular), Curso FIC Concomitante, Itinerário Formativo Técnico Profissional Exclusivo - Qualificação Profissional (não articulado ao ensino médio regular) e Educação de Jovens e Adultos (EJA).",2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Identificação,NU_ANO_CENSO,Ano do Censo,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Identificação,NO_ENTIDADE,Nome da Escola,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Identificação,CO_ENTIDADE,Código da Escola,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Geografia,NO_REGIAO,Nome da Região Geográfica,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Geografia,CO_REGIAO,Código da Região Geográfica,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Geografia,NO_UF,Nome da Unidade da Federação,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Geografia,SG_UF,Sigla da Unidade da Federação,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Geografia,CO_UF,Código da Unidade da Federação,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Geografia,NO_MUNICIPIO,Nome do Município,Char,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Geografia,CO_MUNICIPIO,Código do Município,Num,,s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Segmentação,TP_DEPENDENCIA,Dependência Administrativa,Num,"1 - Federal
+2 - Estadual
+3 - Municipal
+4 - Privada",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Segmentação,TP_CATEGORIA_ESCOLA_PRIVADA,Categoria da escola privada,Num,"1 - Particular
+2 - Comunitária
+3 - Confessional
+4 - Filantrópica
+   - Não aplicável para escolas públicas",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Segmentação,TP_LOCALIZACAO,Localização,Num,"1 - Urbana
+2 - Rural",s,,2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Segmentação,TP_LOCALIZACAO_DIFERENCIADA,Localização diferenciada da escola,Num,"0 - A escola não está em área de localização diferenciada
+1 - Área de assentamento
+2 - Terra indígena
+3 - Comunidade quilombola
+8 - Área onde se localizam povos e comunidades tradicionais",s,"De 2007 a 2011:  
+0 - Não se aplica
+1 - Área de assentamento
+2 - Terra indígena
+3 - Área remanescente de quilombos
+De 2012 a 2018:  
+0 - A escola não está em área de localização diferenciada
+1 - Área de assentamento
+2 - Terra indígena
+3 - Área remanescente de quilombos
+4 - Unidade de uso sustentável
+5 - Unidade de uso sustentável em terra indígena
+6 - Unidade de uso sustentável em área remanescente de quilombos
+De 2019 a 2022: 
+0 - A escola não está em área de localização diferenciada
+1 - Área de assentamento
+2 - Terra indígena
+3 - Área onde se localiza comunidade remanescente de quilombos
+Em 2023 foi adicionada a categoria 8: 
+8 - Área onde se localizam povos e comunidades tradicionais",2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
+Docente,Indicador,QT_DOC_BAS,"Número de Docentes da Educação Básica
+",Num,,s,"Docentes referem-se aos indivíduos que estavam em efetiva regência de classe na data de referência do Censo Escolar da Educação Básica, incluindo somente o Docente em sala de aula presencial e o Docente Titular - coordenador de tutoria (de módulo ou disciplina) - EAD",2007.0,2025.0,Coleta contínua 2007-2025,Potencialmente comparável em toda a série
