@@ -1,0 +1,32 @@
+﻿tabela,grupo,teste,esperado,observado,status
+Escola,Registros,Quantidade de registros preservada,214192,214192,OK
+Matricula,Registros,Quantidade de registros preservada,178766,178766,OK
+Docente,Registros,Quantidade de registros preservada,178772,178772,OK
+Escola,Estrutura,Colunas esperadas,31,31,OK
+Matricula,Estrutura,Colunas esperadas,4,4,OK
+Docente,Estrutura,Colunas esperadas,4,4,OK
+Escola,Chaves,Chaves nulas,0,0,OK
+Escola,Chaves,ID_ANO_ENTIDADE duplicado,0,0,OK
+Matricula,Chaves,Chaves nulas,0,0,OK
+Matricula,Chaves,ID_ANO_ENTIDADE duplicado,0,0,OK
+Docente,Chaves,Chaves nulas,0,0,OK
+Docente,Chaves,ID_ANO_ENTIDADE duplicado,0,0,OK
+Escola,Período,Ano de referência,[2025],[2025],OK
+Matricula,Período,Ano de referência,[2025],[2025],OK
+Docente,Período,Ano de referência,[2025],[2025],OK
+Escola,Indicadores,Total de QT_SALAS_UTILIZADAS,1646884.0,1646884.0,OK
+Matricula,Indicadores,Total de QT_MAT_BAS,46018380,46018380,OK
+Docente,Indicadores,Total de QT_DOC_BAS,2992045,2992045,OK
+Escola,Categorias,Distribuição de TP_DEPENDENCIA,"{1: 728, 2: 33561, 3: 128145, 4: 51758}","{1: 728, 2: 33561, 3: 128145, 4: 51758}",OK
+Escola,Categorias,Distribuição de TP_LOCALIZACAO,"{1: 144217, 2: 69975}","{1: 144217, 2: 69975}",OK
+Escola,Categorias,Distribuição de TP_SITUACAO_FUNCIONAMENTO,"{1: 180540, 2: 29780, 3: 3872}","{1: 180540, 2: 29780, 3: 3872}",OK
+Escola,Infraestrutura,Registros com infraestrutura totalmente ausente,33652,33652,OK
+Escola,Infraestrutura,Registros com infraestrutura parcialmente ausente,0,0,OK
+Escola,Geografia,Nulos em NO_REGIAO,0,0,OK
+Escola,Geografia,Nulos em SG_UF,0,0,OK
+Escola,Geografia,Nulos em NO_UF,0,0,OK
+Escola,Geografia,Nulos em NO_MUNICIPIO,0,0,OK
+Escola,Derivadas,Coerência de DS_REDE,0,0,OK
+Escola,Derivadas,Coerência de FL_ESCOLA_ATIVA,0,0,OK
+Matricula,Relacionamentos,Entidades sem correspondência em Escola,0,0,OK
+Docente,Relacionamentos,Entidades sem correspondência em Escola,0,0,OK
