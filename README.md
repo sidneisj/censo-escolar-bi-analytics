@@ -63,7 +63,7 @@ censo-escolar-bi/
 * [x] **M1 — Definição do projeto**
 * [x] **M2 — Fonte e aquisição dos dados**
 * [x] **M3 — Exploração e qualidade dos dados**
-* [ ] **M4 — Tratamento e transformação**
+* [x] **M4 — Tratamento e transformação**
 * [ ] **M5 — Modelagem dos dados**
 * [ ] **M6 — Desenvolvimento do dashboard**
 * [ ] **M7 — Validação e documentação**
