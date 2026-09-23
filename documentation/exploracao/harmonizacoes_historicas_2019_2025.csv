@@ -1,0 +1,10 @@
+﻿ano,variavel,regra,registros_afetados
+2019,QT_SALAS_UTILIZADAS,Zero convertido para NA em escolas com TP_SITUACAO_FUNCIONAMENTO 2 ou 3,46053
+2019,QT_MAT_BAS,Zero convertido para NA em escolas com TP_SITUACAO_FUNCIONAMENTO 2 ou 3,46053
+2019,QT_DOC_BAS,Zero convertido para NA em escolas com TP_SITUACAO_FUNCIONAMENTO 2 ou 3,46053
+2020,QT_SALAS_UTILIZADAS,Zero convertido para NA em escolas com TP_SITUACAO_FUNCIONAMENTO 2 ou 3,42950
+2020,QT_MAT_BAS,Zero convertido para NA em escolas com TP_SITUACAO_FUNCIONAMENTO 2 ou 3,42950
+2020,QT_DOC_BAS,Zero convertido para NA em escolas com TP_SITUACAO_FUNCIONAMENTO 2 ou 3,42950
+2021,QT_SALAS_UTILIZADAS,Zero convertido para NA em escolas com TP_SITUACAO_FUNCIONAMENTO 2 ou 3,41083
+2021,QT_MAT_BAS,Zero convertido para NA em escolas com TP_SITUACAO_FUNCIONAMENTO 2 ou 3,41083
+2021,QT_DOC_BAS,Zero convertido para NA em escolas com TP_SITUACAO_FUNCIONAMENTO 2 ou 3,41083

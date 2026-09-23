@@ -1,0 +1,8 @@
+﻿ano,origem,registros,entidades_unicas,chaves_nulas,registros_chave_duplicada,anos_encontrados,nulos_qt_mat_bas,nulos_qt_doc_bas,nulos_qt_salas_utilizadas
+2019,arquivo_unico,228521,228521,0,0,2019,0,0,0
+2020,arquivo_unico,224229,224229,0,0,2020,0,0,0
+2021,arquivo_unico,221140,221140,0,0,2021,0,0,0
+2022,arquivo_unico,224649,224649,0,0,2022,46303,46538,44576
+2023,arquivo_unico,217625,217625,0,0,2023,39149,39379,37395
+2024,arquivo_unico,215545,215545,0,0,2024,36259,36548,34480
+2025,tabelas_separadas_reconstruidas,214192,214192,0,0,2025,35426,35420,33652
