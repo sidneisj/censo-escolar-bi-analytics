@@ -1,0 +1,39 @@
+﻿grupo,teste,esperado,observado,status
+Estrutura,Estrutura e ordem das colunas,"['NU_ANO_CENSO', 'CO_ENTIDADE', 'NO_ENTIDADE', 'CO_REGIAO', 'NO_REGIAO', 'CO_UF', 'SG_UF', 'NO_UF', 'CO_MUNICIPIO', 'NO_MUNICIPIO', 'TP_DEPENDENCIA', 'TP_LOCALIZACAO', 'TP_SITUACAO_FUNCIONAMENTO', 'IN_INTERNET', 'IN_BIBLIOTECA', 'IN_SALA_LEITURA', 'IN_LABORATORIO_CIENCIAS', 'IN_LABORATORIO_INFORMATICA', 'IN_QUADRA_ESPORTES', 'IN_BANHEIRO_PNE', 'IN_ACESSIBILIDADE_INEXISTENTE', 'IN_AGUA_POTAVEL', 'IN_ESGOTO_REDE_PUBLICA', 'IN_ENERGIA_REDE_PUBLICA', 'QT_SALAS_UTILIZADAS', 'QT_MAT_BAS', 'QT_DOC_BAS', 'ID_ANO_ENTIDADE', 'DS_DEPENDENCIA', 'DS_REDE', 'DS_LOCALIZACAO', 'DS_SITUACAO_FUNCIONAMENTO', 'FL_ESCOLA_ATIVA']","['NU_ANO_CENSO', 'CO_ENTIDADE', 'NO_ENTIDADE', 'CO_REGIAO', 'NO_REGIAO', 'CO_UF', 'SG_UF', 'NO_UF', 'CO_MUNICIPIO', 'NO_MUNICIPIO', 'TP_DEPENDENCIA', 'TP_LOCALIZACAO', 'TP_SITUACAO_FUNCIONAMENTO', 'IN_INTERNET', 'IN_BIBLIOTECA', 'IN_SALA_LEITURA', 'IN_LABORATORIO_CIENCIAS', 'IN_LABORATORIO_INFORMATICA', 'IN_QUADRA_ESPORTES', 'IN_BANHEIRO_PNE', 'IN_ACESSIBILIDADE_INEXISTENTE', 'IN_AGUA_POTAVEL', 'IN_ESGOTO_REDE_PUBLICA', 'IN_ENERGIA_REDE_PUBLICA', 'QT_SALAS_UTILIZADAS', 'QT_MAT_BAS', 'QT_DOC_BAS', 'ID_ANO_ENTIDADE', 'DS_DEPENDENCIA', 'DS_REDE', 'DS_LOCALIZACAO', 'DS_SITUACAO_FUNCIONAMENTO', 'FL_ESCOLA_ATIVA']",OK
+Período,Anos presentes,"[2019, 2020, 2021, 2022, 2023, 2024, 2025]","[2019, 2020, 2021, 2022, 2023, 2024, 2025]",OK
+Chaves,Chaves nulas,0,0,OK
+Chaves,ID_ANO_ENTIDADE duplicada,0,0,OK
+Categorias,Domínio TP_DEPENDENCIA,"[1, 2, 3, 4]","[np.int64(1), np.int64(2), np.int64(3), np.int64(4)]",OK
+Categorias,Domínio TP_LOCALIZACAO,"[1, 2]","[np.int64(1), np.int64(2)]",OK
+Categorias,Domínio TP_SITUACAO_FUNCIONAMENTO,"[1, 2, 3]","[np.int64(1), np.int64(2), np.int64(3)]",OK
+Infraestrutura,Domínio IN_INTERNET,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Infraestrutura,Domínio IN_BIBLIOTECA,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Infraestrutura,Domínio IN_SALA_LEITURA,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Infraestrutura,Domínio IN_LABORATORIO_CIENCIAS,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Infraestrutura,Domínio IN_LABORATORIO_INFORMATICA,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Infraestrutura,Domínio IN_QUADRA_ESPORTES,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Infraestrutura,Domínio IN_BANHEIRO_PNE,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Infraestrutura,Domínio IN_ACESSIBILIDADE_INEXISTENTE,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Infraestrutura,Domínio IN_AGUA_POTAVEL,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Infraestrutura,Domínio IN_ESGOTO_REDE_PUBLICA,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Infraestrutura,Domínio IN_ENERGIA_REDE_PUBLICA,"[0, 1, 'NA']","[np.int64(0), np.int64(1)]",OK
+Quantitativos,Valores negativos em QT_SALAS_UTILIZADAS,0,0,OK
+Quantitativos,Código especial 88888 em QT_SALAS_UTILIZADAS,0,0,OK
+Quantitativos,Valores negativos em QT_MAT_BAS,0,0,OK
+Quantitativos,Código especial 88888 em QT_MAT_BAS,0,0,OK
+Quantitativos,Valores negativos em QT_DOC_BAS,0,0,OK
+Quantitativos,Código especial 88888 em QT_DOC_BAS,0,0,OK
+Derivadas,Consistência DS_DEPENDENCIA,0,0,OK
+Derivadas,Consistência DS_REDE,0,0,OK
+Derivadas,Consistência DS_LOCALIZACAO,0,0,OK
+Derivadas,Consistência DS_SITUACAO_FUNCIONAMENTO,0,0,OK
+Derivadas,Consistência FL_ESCOLA_ATIVA,0,0,OK
+Exportação,Quantidade de registros após releitura,1545901,1545901,OK
+Exportação,Quantidade de colunas após releitura,33,33,OK
+Exportação,Chaves duplicadas após releitura,0,0,OK
+Exportação,Total preservado QT_SALAS_UTILIZADAS,10982337.0,10982337.0,OK
+Exportação,Total preservado QT_MAT_BAS,329631949.0,329631949.0,OK
+Exportação,Total preservado QT_DOC_BAS,20206898.0,20206898.0,OK
+Exportação,Nulos preservados QT_SALAS_UTILIZADAS,280189,280189,OK
+Exportação,Nulos preservados QT_MAT_BAS,287223,287223,OK
+Exportação,Nulos preservados QT_DOC_BAS,287971,287971,OK
