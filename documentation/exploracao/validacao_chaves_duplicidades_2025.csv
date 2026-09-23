@@ -1,0 +1,4 @@
+﻿tabela,total_registros,entidades_unicas,anos_encontrados,nulos_nu_ano_censo,nulos_co_entidade,registros_chave_nula,registros_chave_duplicada,chaves_distintas_duplicadas,registros_linha_duplicada,status
+Escola,214192,214192,2025,0,0,0,0,0,0,OK
+Matricula,178766,178766,2025,0,0,0,0,0,0,OK
+Docente,178772,178772,2025,0,0,0,0,0,0,OK
