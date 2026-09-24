@@ -33,22 +33,196 @@ A base contém informações de:
 
 ---
 
-## 3. Granularidade
+## 3. Fato, granularidade e chaves do modelo
+
+### 3.1 Fato analítico
+
+O evento analítico central do modelo representa a situação de uma escola em um determinado ano do Censo Escolar.
+
+Cada registro reúne características dimensionais da escola e medidas quantitativas referentes ao respectivo ano.
+
+Entre as principais medidas associadas ao registro estão:
+
+- quantidade de matrículas;
+- quantidade de docentes;
+- quantidade de salas utilizadas;
+- situação de funcionamento;
+- indicadores de infraestrutura.
+
+Embora o modelo físico utilize uma tabela analítica única, conceitualmente cada registro pode ser interpretado como um fato anual associado a uma escola.
+
+---
+
+### 3.2 Granularidade
 
 A granularidade da base é:
 
 `1 registro = 1 Escola × 1 Ano`
 
-A chave analítica utilizada para representar essa combinação é:
+Isso significa que uma escola possui no máximo um registro para cada ano do período analisado.
+
+O período atualmente disponível compreende:
+
+`2019 a 2025`
+
+Uma mesma escola pode aparecer em vários registros da base quando estiver presente em diferentes anos do Censo Escolar.
+
+Por esse motivo, a quantidade total de registros da base histórica não representa a quantidade de escolas distintas existentes no Brasil.
+
+---
+
+### 3.3 Chave da escola
+
+O campo:
+
+`CO_ENTIDADE`
+
+representa o código de identificação da escola utilizado pelo Censo Escolar.
+
+Esse código identifica a entidade escolar, mas não é único na base histórica completa, pois uma mesma escola pode aparecer em diferentes anos.
+
+Exemplo conceitual:
+
+```text
+CO_ENTIDADE | NU_ANO_CENSO
+12345678    | 2023
+12345678    | 2024
+12345678    | 2025
+```
+
+Nesse caso existem três registros históricos, mas todos pertencem à mesma escola.
+
+---
+
+### 3.4 Chave temporal
+
+O campo:
+
+`NU_ANO_CENSO`
+
+identifica o ano de referência do Censo Escolar.
+
+Ele será utilizado como principal dimensão temporal do modelo.
+
+A combinação do ano com o código da escola determina a granularidade da base.
+
+---
+
+### 3.5 Chave analítica
+
+Para representar de forma única cada registro foi criada a chave:
 
 `ID_ANO_ENTIDADE`
 
-Essa chave é formada a partir de:
+Sua formação segue a regra:
 
-- `NU_ANO_CENSO`;
-- `CO_ENTIDADE`.
+`NU_ANO_CENSO + "_" + CO_ENTIDADE`
 
-Uma mesma escola pode, portanto, aparecer várias vezes na base histórica, desde que em anos diferentes.
+Exemplo:
+
+```text
+2025_43145833
+```
+
+Essa chave identifica exclusivamente uma escola em determinado ano.
+
+Durante o processo de ETL foi validado que:
+
+- não existem valores nulos nessa chave;
+- não existem duplicidades;
+- cada combinação Escola × Ano corresponde a um único registro.
+
+---
+
+### 3.6 Comportamento temporal das escolas
+
+Uma escola pode apresentar situações diferentes ao longo da série histórica.
+
+O modelo preserva a situação registrada em cada ano por meio de:
+
+`TP_SITUACAO_FUNCIONAMENTO`
+
+e de sua descrição derivada:
+
+`DS_SITUACAO_FUNCIONAMENTO`
+
+As situações observadas no período são:
+
+- Em Atividade;
+- Paralisada;
+- Extinta no ano do Censo.
+
+Também foi criada a variável:
+
+`FL_ESCOLA_ATIVA`
+
+com a seguinte regra:
+
+```text
+1 = escola em atividade
+0 = escola não ativa
+```
+
+Essa variável permite calcular diretamente a quantidade de escolas em atividade dentro de um determinado contexto temporal.
+
+---
+
+### 3.7 Implicações para contagem de escolas
+
+A existência de vários anos exige atenção na contagem das escolas.
+
+`COUNT(ID_ANO_ENTIDADE)`
+
+representa a quantidade de registros Escola × Ano.
+
+Já:
+
+`COUNTD(CO_ENTIDADE)`
+
+representa a quantidade de escolas distintas presentes no contexto da análise.
+
+Esses conceitos não são equivalentes quando mais de um ano estiver selecionado.
+
+Por exemplo, uma escola presente de 2019 a 2025 corresponde a:
+
+- 7 registros Escola × Ano;
+- 1 escola distinta.
+
+Portanto, métricas relacionadas à quantidade de escolas deverão considerar explicitamente o contexto temporal utilizado no dashboard.
+
+As regras definitivas de agregação serão documentadas na issue dedicada às métricas e regras de cálculo.
+
+---
+
+### 3.8 Medidas associadas à granularidade
+
+As principais medidas quantitativas disponíveis no nível Escola × Ano são:
+
+`QT_MAT_BAS`  
+Quantidade de matrículas da educação básica associadas à escola naquele ano.
+
+`QT_DOC_BAS`  
+Quantidade de docentes da educação básica associada à escola naquele ano.
+
+`QT_SALAS_UTILIZADAS`  
+Quantidade de salas utilizadas pela escola naquele ano.
+
+Essas medidas podem ser agregadas geograficamente ou por características administrativas, desde que seja preservado o contexto temporal adequado.
+
+---
+
+### 3.9 Integridade do grão
+
+A granularidade foi validada durante a etapa de ETL para todos os anos de 2019 a 2025.
+
+A base final possui:
+
+- 1.545.901 registros Escola × Ano;
+- nenhuma chave analítica nula;
+- nenhuma chave analítica duplicada;
+- período completo de 2019 a 2025.
+
+Dessa forma, a estrutura está adequada para utilização como camada analítica do Tableau.
 
 ---
 
