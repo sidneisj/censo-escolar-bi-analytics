@@ -356,3 +356,319 @@ Nesse cenário, dimensões conformadas como Tempo, Escola e Geografia poderão s
 Para o escopo atual do projeto, a tabela analítica única oferece o melhor equilíbrio entre simplicidade, rastreabilidade, desempenho e facilidade de utilização no Tableau.
 
 A estratégia adotada mantém o modelo suficientemente simples para construção dos dashboards atuais, sem impedir uma futura evolução para uma arquitetura dimensional mais complexa.
+
+---
+
+## 9. Dimensões e hierarquias de análise
+
+Mesmo utilizando uma tabela analítica única, os atributos do modelo são organizados conceitualmente em dimensões.
+
+Essas dimensões serão utilizadas no Tableau para filtros, segmentações, agrupamentos, detalhamento e navegação entre diferentes níveis de análise.
+
+---
+
+### 9.1 Dimensão Tempo
+
+A dimensão temporal é representada por:
+
+`NU_ANO_CENSO`
+
+O modelo contém dados anuais do período:
+
+`2019 a 2025`
+
+Como o Censo Escolar utilizado no projeto possui periodicidade anual, não serão criados níveis artificiais de trimestre, mês ou dia.
+
+**Hierarquia:**
+
+`Ano`
+
+**Principais usos:**
+
+- evolução histórica;
+- comparação entre anos;
+- cálculo de variações;
+- filtros temporais;
+- análise de tendências.
+
+---
+
+### 9.2 Dimensão Escola
+
+A escola é identificada pelos campos:
+
+- `CO_ENTIDADE`;
+- `NO_ENTIDADE`.
+
+`CO_ENTIDADE` representa o identificador da escola e `NO_ENTIDADE` representa o nome registrado no respectivo ano do Censo Escolar.
+
+Como o modelo possui granularidade Escola × Ano, os atributos da escola devem ser interpretados dentro do contexto temporal do registro.
+
+**Principais usos:**
+
+- identificação individual de escolas;
+- detalhamento das análises;
+- quantidade de escolas distintas;
+- consulta de características específicas de uma unidade escolar.
+
+A dimensão Escola não terá uma hierarquia própria no escopo atual.
+
+---
+
+### 9.3 Dimensão Geografia
+
+A dimensão geográfica é composta pelos campos:
+
+- `CO_REGIAO`;
+- `NO_REGIAO`;
+- `CO_UF`;
+- `SG_UF`;
+- `NO_UF`;
+- `CO_MUNICIPIO`;
+- `NO_MUNICIPIO`.
+
+A principal hierarquia geográfica do projeto será:
+
+`Brasil → Região → UF → Município`
+
+O nível Brasil representa o total nacional e não necessita de uma coluna própria na base.
+
+No Tableau, essa hierarquia permitirá navegar progressivamente do panorama nacional até o nível municipal.
+
+**Principais usos:**
+
+- comparação entre regiões;
+- comparação entre estados;
+- análises municipais;
+- mapas;
+- filtros geográficos;
+- detalhamento hierárquico.
+
+Para identificação técnica deverão ser priorizados os códigos geográficos, enquanto os nomes serão utilizados para apresentação.
+
+---
+
+### 9.4 Dimensão Administrativa
+
+A estrutura administrativa das escolas será representada por:
+
+- `TP_DEPENDENCIA`;
+- `DS_DEPENDENCIA`;
+- `DS_REDE`.
+
+As categorias de dependência administrativa são:
+
+- Federal;
+- Estadual;
+- Municipal;
+- Privada.
+
+A variável `DS_REDE` consolida essas categorias em:
+
+- Pública;
+- Privada.
+
+Será utilizada a seguinte hierarquia conceitual:
+
+`Rede → Dependência Administrativa`
+
+Exemplo:
+
+```text
+Pública
+├── Federal
+├── Estadual
+└── Municipal
+
+Privada
+└── Privada
+```
+
+**Principais usos:**
+
+- comparação entre redes pública e privada;
+- participação das diferentes dependências administrativas;
+- evolução das matrículas por rede;
+- análise de infraestrutura segundo dependência.
+
+---
+
+### 9.5 Dimensão Localização
+
+A localização da escola é representada por:
+
+- `TP_LOCALIZACAO`;
+- `DS_LOCALIZACAO`.
+
+As categorias disponíveis são:
+
+- Urbana;
+- Rural.
+
+Essa dimensão será utilizada de forma independente, sem necessidade de hierarquia.
+
+**Principais usos:**
+
+- comparação urbano × rural;
+- filtros;
+- análise de infraestrutura;
+- distribuição de escolas;
+- comparação de matrículas e docentes.
+
+---
+
+### 9.6 Dimensão Situação de Funcionamento
+
+A situação da escola é representada por:
+
+- `TP_SITUACAO_FUNCIONAMENTO`;
+- `DS_SITUACAO_FUNCIONAMENTO`;
+- `FL_ESCOLA_ATIVA`.
+
+As situações observadas na série histórica são:
+
+- Em Atividade;
+- Paralisada;
+- Extinta no ano do Censo.
+
+`FL_ESCOLA_ATIVA` será utilizado como indicador auxiliar para identificação das escolas em atividade.
+
+Essa dimensão não possui hierarquia.
+
+**Principais usos:**
+
+- separar escolas ativas e não ativas;
+- acompanhar quantidade de escolas em funcionamento;
+- evitar inclusão indevida de escolas paralisadas ou extintas em determinados indicadores;
+- analisar mudanças na situação das unidades escolares.
+
+---
+
+### 9.7 Dimensão Infraestrutura
+
+As características de infraestrutura escolar são representadas por indicadores binários:
+
+- `IN_INTERNET`;
+- `IN_BIBLIOTECA`;
+- `IN_SALA_LEITURA`;
+- `IN_LABORATORIO_CIENCIAS`;
+- `IN_LABORATORIO_INFORMATICA`;
+- `IN_QUADRA_ESPORTES`;
+- `IN_BANHEIRO_PNE`;
+- `IN_ACESSIBILIDADE_INEXISTENTE`;
+- `IN_AGUA_POTAVEL`;
+- `IN_ESGOTO_REDE_PUBLICA`;
+- `IN_ENERGIA_REDE_PUBLICA`.
+
+De forma geral:
+
+`1 = característica presente`
+
+`0 = característica ausente`
+
+Valores `NA` devem permanecer diferenciados de zero, pois podem representar situações não aplicáveis ou ausência de informação conforme a estrutura dos microdados.
+
+Os campos de infraestrutura não formam uma hierarquia entre si.
+
+Cada indicador representa uma característica independente da escola.
+
+**Principais usos:**
+
+- percentual de escolas com determinada infraestrutura;
+- comparação territorial;
+- comparação entre redes;
+- comparação urbano × rural;
+- evolução histórica das condições de infraestrutura.
+
+O campo `IN_ACESSIBILIDADE_INEXISTENTE` exige atenção especial na interpretação, pois sua lógica é inversa aos demais indicadores: o valor positivo indica inexistência de recursos de acessibilidade.
+
+---
+
+### 9.8 Hierarquias oficiais do modelo
+
+As hierarquias definidas para utilização no Tableau são:
+
+#### Geográfica
+
+`Brasil → Região → UF → Município`
+
+#### Administrativa
+
+`Rede → Dependência Administrativa`
+
+#### Temporal
+
+`Ano`
+
+As demais dimensões serão utilizadas como atributos independentes de filtro e segmentação.
+
+---
+
+### 9.9 Campos de código e descrição
+
+Sempre que existirem campos de código e descrição, os códigos serão mantidos no modelo para garantir:
+
+- identificação inequívoca;
+- rastreabilidade;
+- consistência de relacionamentos;
+- possibilidade de futuras integrações.
+
+Os campos descritivos serão utilizados preferencialmente na interface do dashboard.
+
+Exemplos:
+
+`CO_UF` → identificação técnica
+
+`NO_UF` / `SG_UF` → apresentação
+
+`CO_MUNICIPIO` → identificação técnica
+
+`NO_MUNICIPIO` → apresentação
+
+`TP_DEPENDENCIA` → código oficial
+
+`DS_DEPENDENCIA` → apresentação
+
+---
+
+### 9.10 Uso das dimensões no Tableau
+
+As dimensões deverão permitir que os principais indicadores sejam analisados segundo diferentes perspectivas sem alterar a granularidade original da base.
+
+Exemplo conceitual:
+
+```text
+Ano
+  ↓
+Região
+  ↓
+UF
+  ↓
+Município
+  ↓
+Rede
+  ↓
+Dependência
+  ↓
+Urbana / Rural
+```
+
+Essa sequência representa possibilidades de segmentação e não uma única hierarquia obrigatória.
+
+Filtros poderão ser combinados conforme o objetivo de cada dashboard.
+
+---
+
+### 9.11 Resumo das dimensões
+
+| Dimensão | Principais campos | Hierarquia |
+|---|---|---|
+| Tempo | `NU_ANO_CENSO` | Ano |
+| Escola | `CO_ENTIDADE`, `NO_ENTIDADE` | — |
+| Geografia | Região, UF, Município | Brasil → Região → UF → Município |
+| Administrativa | `DS_REDE`, `DS_DEPENDENCIA` | Rede → Dependência |
+| Localização | `DS_LOCALIZACAO` | — |
+| Situação | `DS_SITUACAO_FUNCIONAMENTO`, `FL_ESCOLA_ATIVA` | — |
+| Infraestrutura | indicadores `IN_*` selecionados | — |
+
+As dimensões definidas atendem às perguntas analíticas estabelecidas para o projeto e serão utilizadas como base para definição das métricas e KPIs na próxima etapa.
