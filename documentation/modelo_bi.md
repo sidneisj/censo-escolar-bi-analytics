@@ -1107,3 +1107,536 @@ As principais regras estabelecidas são:
 6. `NA` não deve ser convertido automaticamente em zero;
 7. indicadores históricos devem preservar a comparabilidade definida durante o ETL;
 8. cálculos de variação e percentuais serão formalizados na próxima etapa.
+
+---
+
+## 11. Regras de agregação e campos calculados
+
+As regras de agregação definem como cada campo deverá ser utilizado no Tableau para evitar dupla contagem, somas indevidas ou interpretações incorretas.
+
+Como a base possui granularidade:
+
+`1 registro = 1 Escola × 1 Ano`
+
+o comportamento das métricas depende diretamente do contexto temporal aplicado à análise.
+
+---
+
+## 11.1 Classificação dos principais campos
+
+Os principais campos do modelo podem ser classificados da seguinte forma:
+
+| Campo | Tipo analítico | Agregação principal |
+|---|---|---|
+| `QT_MAT_BAS` | Medida | `SUM` |
+| `QT_DOC_BAS` | Medida | `SUM` |
+| `QT_SALAS_UTILIZADAS` | Medida | `SUM` |
+| `FL_ESCOLA_ATIVA` | Indicador | `SUM` em contexto anual |
+| `CO_ENTIDADE` | Identificador | `COUNTD` |
+| `ID_ANO_ENTIDADE` | Chave Escola × Ano | `COUNTD` ou contagem de registros |
+| Campos `IN_*` | Indicadores binários | cálculo específico |
+| `NU_ANO_CENSO` | Dimensão temporal | não somar |
+
+---
+
+## 11.2 Matrículas
+
+O total de matrículas será calculado por:
+
+```text
+SUM([QT_MAT_BAS])
+```
+
+Esse cálculo pode ser utilizado por:
+
+- Ano;
+- Região;
+- UF;
+- Município;
+- Rede;
+- Dependência;
+- Localização.
+
+Quando vários anos estiverem selecionados simultaneamente, a soma representa o total de matrículas registradas ao longo dos diferentes Censos e não a quantidade de alunos únicos no período.
+
+Portanto, a métrica deverá ser apresentada como:
+
+`Matrículas`
+
+em contexto anual ou como:
+
+`Matrículas registradas no período`
+
+quando houver agregação de múltiplos anos.
+
+---
+
+## 11.3 Docentes
+
+O total de docentes será calculado por:
+
+```text
+SUM([QT_DOC_BAS])
+```
+
+A interpretação segue o mesmo princípio temporal das matrículas.
+
+O indicador representa a quantidade de docentes informada pelas escolas em cada Censo Escolar.
+
+Não representa necessariamente pessoas únicas quando diferentes anos são combinados.
+
+---
+
+## 11.4 Salas utilizadas
+
+O total de salas utilizadas será calculado por:
+
+```text
+SUM([QT_SALAS_UTILIZADAS])
+```
+
+Valores ausentes deverão permanecer fora da soma.
+
+Não deverá ser aplicada substituição automática de `NA` por zero.
+
+---
+
+## 11.5 Escolas ativas
+
+Em análises de um único ano, a quantidade de escolas ativas será calculada por:
+
+```text
+SUM([FL_ESCOLA_ATIVA])
+```
+
+Como:
+
+```text
+1 = escola ativa
+0 = escola não ativa
+```
+
+a soma representa diretamente a quantidade de registros ativos.
+
+Exemplo validado para 2025:
+
+```text
+SUM([FL_ESCOLA_ATIVA]) = 180.540
+```
+
+---
+
+## 11.6 Escolas ativas em múltiplos anos
+
+Quando vários anos estiverem selecionados:
+
+```text
+SUM([FL_ESCOLA_ATIVA])
+```
+
+representará o número de ocorrências de escolas ativas ao longo dos anos.
+
+Exemplo conceitual:
+
+uma escola ativa em todos os sete anos de 2019 a 2025 contribuirá com:
+
+```text
+7
+```
+
+para essa soma.
+
+Por esse motivo, esse valor não deverá ser apresentado como quantidade de escolas únicas do período.
+
+Caso o objetivo seja identificar quantas escolas distintas estiveram ativas pelo menos uma vez no intervalo analisado, poderá ser utilizado:
+
+```text
+COUNTD(
+    IF [FL_ESCOLA_ATIVA] = 1
+    THEN [CO_ENTIDADE]
+    END
+)
+```
+
+Os dois indicadores possuem significados diferentes e não deverão ser tratados como equivalentes.
+
+---
+
+## 11.7 Escolas distintas
+
+A quantidade de escolas distintas será calculada por:
+
+```text
+COUNTD([CO_ENTIDADE])
+```
+
+Em um único ano, essa métrica representa o número de entidades escolares presentes naquele Censo.
+
+Quando vários anos forem selecionados, representa a quantidade de escolas distintas que aparecem pelo menos uma vez no período.
+
+---
+
+## 11.8 Registros Escola × Ano
+
+Quando for necessário medir a quantidade de observações da base, deverá ser utilizada a chave:
+
+```text
+COUNTD([ID_ANO_ENTIDADE])
+```
+
+Essa métrica representa:
+
+`quantidade de registros Escola × Ano`
+
+e não quantidade de escolas distintas.
+
+---
+
+# 11.9 Indicadores de infraestrutura
+
+Os indicadores de infraestrutura possuem três estados possíveis:
+
+```text
+1  = possui o recurso
+0  = não possui o recurso
+NA = informação não disponível / não aplicável
+```
+
+O percentual deverá utilizar somente registros válidos e escolas em atividade.
+
+Não deverá ser utilizada uma regra que transforme `NA` em zero.
+
+---
+
+## 11.10 Campo calculado para infraestrutura válida
+
+Para cada indicador poderá ser criado um campo calculado seguindo o padrão:
+
+### Exemplo — Internet
+
+**Nome sugerido:**
+
+`Internet - Escola Ativa`
+
+```text
+IF [FL_ESCOLA_ATIVA] = 1 THEN
+    [IN_INTERNET]
+END
+```
+
+O Tableau preservará `NULL` quando o indicador original não possuir informação.
+
+---
+
+## 11.11 Percentual de escolas com Internet
+
+Como `IN_INTERNET` possui valores 0 e 1, a média dos registros válidos corresponde diretamente à proporção de escolas que possuem o recurso.
+
+Assim:
+
+```text
+AVG([Internet - Escola Ativa])
+```
+
+representa:
+
+`Percentual de escolas ativas com Internet`
+
+O campo deverá ser formatado como percentual.
+
+Exemplo conceitual:
+
+```text
+0,92 → 92%
+```
+
+Essa abordagem possui a vantagem de ignorar automaticamente valores `NULL`.
+
+---
+
+## 11.12 Padrão para demais indicadores de infraestrutura
+
+A mesma lógica poderá ser utilizada para:
+
+```text
+Biblioteca - Escola Ativa
+Sala de Leitura - Escola Ativa
+Laboratório de Ciências - Escola Ativa
+Laboratório de Informática - Escola Ativa
+Quadra de Esportes - Escola Ativa
+Banheiro PNE - Escola Ativa
+Água Potável - Escola Ativa
+Esgoto em Rede Pública - Escola Ativa
+Energia em Rede Pública - Escola Ativa
+```
+
+Estrutura genérica:
+
+```text
+IF [FL_ESCOLA_ATIVA] = 1 THEN
+    [INDICADOR]
+END
+```
+
+e posteriormente:
+
+```text
+AVG([CAMPO CALCULADO])
+```
+
+---
+
+## 11.13 Indicador positivo de acessibilidade
+
+O campo original:
+
+`IN_ACESSIBILIDADE_INEXISTENTE`
+
+possui lógica inversa:
+
+```text
+1 = inexistência de recursos de acessibilidade
+0 = existem recursos de acessibilidade
+```
+
+Para facilitar a interpretação no dashboard, deverá ser criado um indicador positivo.
+
+**Nome sugerido:**
+
+`Acessibilidade - Escola Ativa`
+
+Regra:
+
+```text
+IF [FL_ESCOLA_ATIVA] = 1 THEN
+
+    IF ISNULL([IN_ACESSIBILIDADE_INEXISTENTE]) THEN
+        NULL
+    ELSE
+        1 - [IN_ACESSIBILIDADE_INEXISTENTE]
+    END
+
+END
+```
+
+Assim:
+
+```text
+1 = possui algum recurso de acessibilidade
+0 = não possui recurso de acessibilidade
+NULL = informação não disponível
+```
+
+O percentual poderá então ser calculado por:
+
+```text
+AVG([Acessibilidade - Escola Ativa])
+```
+
+---
+
+# 11.14 Participação percentual por categoria
+
+Para análises como participação das matrículas por rede, poderá ser utilizada a lógica:
+
+```text
+SUM([QT_MAT_BAS])
+/
+TOTAL(SUM([QT_MAT_BAS]))
+```
+
+formatada como percentual.
+
+Exemplo:
+
+```text
+Rede Pública  → percentual das matrículas
+Rede Privada  → percentual das matrículas
+```
+
+O cálculo deverá respeitar a dimensão utilizada na visualização.
+
+O particionamento do cálculo de tabela deverá ser validado durante a construção do dashboard.
+
+---
+
+## 11.15 Variação absoluta anual
+
+Para analisar a diferença entre um ano e o anterior:
+
+```text
+SUM([QT_MAT_BAS])
+-
+LOOKUP(SUM([QT_MAT_BAS]), -1)
+```
+
+A mesma lógica poderá ser utilizada para:
+
+- Docentes;
+- Escolas Ativas;
+- Salas Utilizadas.
+
+---
+
+## 11.16 Variação percentual anual
+
+Exemplo para Matrículas:
+
+```text
+(
+    SUM([QT_MAT_BAS])
+    -
+    LOOKUP(SUM([QT_MAT_BAS]), -1)
+)
+/
+ABS(
+    LOOKUP(SUM([QT_MAT_BAS]), -1)
+)
+```
+
+O resultado deverá ser formatado como percentual.
+
+O primeiro ano da série não possuirá comparação com ano anterior e deverá permanecer sem valor de variação.
+
+---
+
+## 11.17 Requisito para cálculos de evolução
+
+Os cálculos utilizando `LOOKUP()` dependem da estrutura da visualização no Tableau.
+
+Para que a comparação funcione corretamente:
+
+- `NU_ANO_CENSO` deverá estar presente no contexto da visualização;
+- os anos deverão estar ordenados cronologicamente;
+- o cálculo deverá utilizar Ano como direção da tabela;
+- filtros aplicados não deverão remover inadvertidamente o ano anterior necessário à comparação.
+
+Caso seja necessário apresentar variação anual em um KPI isolado com apenas um ano visível, poderá ser necessária outra estratégia, como parâmetro ou cálculo específico.
+
+Essa decisão será tomada durante a implementação visual.
+
+---
+
+# 11.18 Regras para valores ausentes
+
+Os valores `NULL` possuem significado diferente de zero e deverão ser preservados.
+
+Portanto:
+
+```text
+NULL ≠ 0
+```
+
+Especialmente nos indicadores de infraestrutura e nas medidas quantitativas harmonizadas.
+
+Não deverão ser utilizados indiscriminadamente cálculos como:
+
+```text
+ZN([campo])
+```
+
+sem avaliação prévia do significado do valor ausente.
+
+---
+
+## 11.19 Regras para filtros
+
+Os filtros deverão atuar sobre as dimensões e não alterar a interpretação original das medidas.
+
+Principais filtros previstos:
+
+- Ano;
+- Região;
+- UF;
+- Município;
+- Rede;
+- Dependência;
+- Localização;
+- Situação da Escola.
+
+Para os dashboards principais, deverá existir um contexto temporal claramente visível para evitar interpretação de valores acumulados de vários anos como fotografias de um único período.
+
+---
+
+## 11.20 Regras para filtros geográficos
+
+A hierarquia será:
+
+```text
+Brasil
+↓
+Região
+↓
+UF
+↓
+Município
+```
+
+Os filtros inferiores deverão respeitar os níveis superiores.
+
+Exemplo:
+
+ao selecionar:
+
+```text
+Região = Sudeste
+```
+
+a lista de UFs deverá representar apenas estados pertencentes ao Sudeste.
+
+O mesmo princípio será utilizado entre UF e Município.
+
+---
+
+## 11.21 Regras para medidas de infraestrutura
+
+Os percentuais de infraestrutura deverão:
+
+1. considerar somente escolas em atividade;
+2. excluir valores `NULL` do denominador;
+3. manter `0` como ausência real do recurso;
+4. manter `1` como presença do recurso;
+5. respeitar filtros geográficos e administrativos;
+6. permitir comparação histórica somente dentro do período de comparabilidade definido no ETL.
+
+---
+
+## 11.22 Nomenclatura no Tableau
+
+Os campos técnicos poderão receber nomes de apresentação mais amigáveis no Tableau sem alterar o nome físico da coluna.
+
+Exemplos:
+
+| Campo físico | Nome de apresentação |
+|---|---|
+| `NU_ANO_CENSO` | Ano |
+| `NO_REGIAO` | Região |
+| `SG_UF` | UF |
+| `NO_MUNICIPIO` | Município |
+| `DS_REDE` | Rede |
+| `DS_DEPENDENCIA` | Dependência Administrativa |
+| `DS_LOCALIZACAO` | Localização |
+| `QT_MAT_BAS` | Matrículas |
+| `QT_DOC_BAS` | Docentes |
+| `QT_SALAS_UTILIZADAS` | Salas Utilizadas |
+| `FL_ESCOLA_ATIVA` | Escola Ativa |
+
+Os nomes físicos serão preservados na fonte de dados para manter rastreabilidade com o processo de ETL.
+
+---
+
+## 11.23 Resumo das principais regras
+
+| Indicador | Regra |
+|---|---|
+| Matrículas | `SUM(QT_MAT_BAS)` |
+| Docentes | `SUM(QT_DOC_BAS)` |
+| Salas Utilizadas | `SUM(QT_SALAS_UTILIZADAS)` |
+| Escolas Ativas em um ano | `SUM(FL_ESCOLA_ATIVA)` |
+| Escolas distintas | `COUNTD(CO_ENTIDADE)` |
+| Registros Escola × Ano | `COUNTD(ID_ANO_ENTIDADE)` |
+| Infraestrutura | Média do indicador 0/1 entre escolas ativas e valores válidos |
+| Evolução absoluta | valor atual − valor anterior |
+| Evolução percentual | `(atual − anterior) / anterior` |
+
+Essas regras serão utilizadas na validação do modelo analítico e, posteriormente, na implementação das visualizações no Tableau.
