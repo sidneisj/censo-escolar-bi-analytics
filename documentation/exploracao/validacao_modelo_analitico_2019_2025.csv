@@ -1,0 +1,404 @@
+﻿ano,grupo,teste,esperado,observado,status
+Geral,Estrutura,Período histórico,"[2019, 2020, 2021, 2022, 2023, 2024, 2025]","[2019, 2020, 2021, 2022, 2023, 2024, 2025]",OK
+Geral,Granularidade,Chaves nulas,0,0,OK
+Geral,Granularidade,ID_ANO_ENTIDADE duplicada,0,0,OK
+2019,KPI,registros,228521.0,228521.0,OK
+2019,KPI,entidades,228521.0,228521.0,OK
+2019,KPI,escolas_ativas,182468.0,182468.0,OK
+2019,KPI,matriculas,47874246.0,47874246.0,OK
+2019,KPI,docentes,2813042.0,2813042.0,OK
+2019,KPI,salas_utilizadas,1552007.0,1552007.0,OK
+2019,Granularidade,COUNTD escola = COUNTD Escola x Ano em contexto anual,228521.0,228521.0,OK
+2020,KPI,registros,224229.0,224229.0,OK
+2020,KPI,entidades,224229.0,224229.0,OK
+2020,KPI,escolas_ativas,181279.0,181279.0,OK
+2020,KPI,matriculas,47295294.0,47295294.0,OK
+2020,KPI,docentes,2757776.0,2757776.0,OK
+2020,KPI,salas_utilizadas,1539211.0,1539211.0,OK
+2020,Granularidade,COUNTD escola = COUNTD Escola x Ano em contexto anual,224229.0,224229.0,OK
+2021,KPI,registros,221140.0,221140.0,OK
+2021,KPI,entidades,221140.0,221140.0,OK
+2021,KPI,escolas_ativas,180057.0,180057.0,OK
+2021,KPI,matriculas,46668401.0,46668401.0,OK
+2021,KPI,docentes,2846169.0,2846169.0,OK
+2021,KPI,salas_utilizadas,1520230.0,1520230.0,OK
+2021,Granularidade,COUNTD escola = COUNTD Escola x Ano em contexto anual,221140.0,221140.0,OK
+2022,KPI,registros,224649.0,224649.0,OK
+2022,KPI,entidades,224649.0,224649.0,OK
+2022,KPI,escolas_ativas,184332.0,184332.0,OK
+2022,KPI,matriculas,47382074.0,47382074.0,OK
+2022,KPI,docentes,2924306.0,2924306.0,OK
+2022,KPI,salas_utilizadas,1537955.0,1537955.0,OK
+2022,Granularidade,COUNTD escola = COUNTD Escola x Ano em contexto anual,224649.0,224649.0,OK
+2023,KPI,registros,217625.0,217625.0,OK
+2023,KPI,entidades,217625.0,217625.0,OK
+2023,KPI,escolas_ativas,180230.0,180230.0,OK
+2023,KPI,matriculas,47304632.0,47304632.0,OK
+2023,KPI,docentes,2934558.0,2934558.0,OK
+2023,KPI,salas_utilizadas,1577976.0,1577976.0,OK
+2023,Granularidade,COUNTD escola = COUNTD Escola x Ano em contexto anual,217625.0,217625.0,OK
+2024,KPI,registros,215545.0,215545.0,OK
+2024,KPI,entidades,215545.0,215545.0,OK
+2024,KPI,escolas_ativas,181065.0,181065.0,OK
+2024,KPI,matriculas,47088922.0,47088922.0,OK
+2024,KPI,docentes,2939002.0,2939002.0,OK
+2024,KPI,salas_utilizadas,1608074.0,1608074.0,OK
+2024,Granularidade,COUNTD escola = COUNTD Escola x Ano em contexto anual,215545.0,215545.0,OK
+2025,KPI,registros,214192.0,214192.0,OK
+2025,KPI,entidades,214192.0,214192.0,OK
+2025,KPI,escolas_ativas,180540.0,180540.0,OK
+2025,KPI,matriculas,46018380.0,46018380.0,OK
+2025,KPI,docentes,2992045.0,2992045.0,OK
+2025,KPI,salas_utilizadas,1646884.0,1646884.0,OK
+2025,Granularidade,COUNTD escola = COUNTD Escola x Ano em contexto anual,214192.0,214192.0,OK
+2019,Dimensões,matriculas por DS_REDE,47874246.0,47874246.0,OK
+2019,Dimensões,docentes por DS_REDE,2813042.0,2813042.0,OK
+2019,Dimensões,escolas_ativas por DS_REDE,182468,182468,OK
+2019,Dimensões,salas_utilizadas por DS_REDE,1552007.0,1552007.0,OK
+2019,Dimensões,matriculas por DS_DEPENDENCIA,47874246.0,47874246.0,OK
+2019,Dimensões,docentes por DS_DEPENDENCIA,2813042.0,2813042.0,OK
+2019,Dimensões,escolas_ativas por DS_DEPENDENCIA,182468,182468,OK
+2019,Dimensões,salas_utilizadas por DS_DEPENDENCIA,1552007.0,1552007.0,OK
+2019,Dimensões,matriculas por DS_LOCALIZACAO,47874246.0,47874246.0,OK
+2019,Dimensões,docentes por DS_LOCALIZACAO,2813042.0,2813042.0,OK
+2019,Dimensões,escolas_ativas por DS_LOCALIZACAO,182468,182468,OK
+2019,Dimensões,salas_utilizadas por DS_LOCALIZACAO,1552007.0,1552007.0,OK
+2019,Dimensões,matriculas por NO_REGIAO,47874246.0,47874246.0,OK
+2019,Dimensões,docentes por NO_REGIAO,2813042.0,2813042.0,OK
+2019,Dimensões,escolas_ativas por NO_REGIAO,182468,182468,OK
+2019,Dimensões,salas_utilizadas por NO_REGIAO,1552007.0,1552007.0,OK
+2020,Dimensões,matriculas por DS_REDE,47295294.0,47295294.0,OK
+2020,Dimensões,docentes por DS_REDE,2757776.0,2757776.0,OK
+2020,Dimensões,escolas_ativas por DS_REDE,181279,181279,OK
+2020,Dimensões,salas_utilizadas por DS_REDE,1539211.0,1539211.0,OK
+2020,Dimensões,matriculas por DS_DEPENDENCIA,47295294.0,47295294.0,OK
+2020,Dimensões,docentes por DS_DEPENDENCIA,2757776.0,2757776.0,OK
+2020,Dimensões,escolas_ativas por DS_DEPENDENCIA,181279,181279,OK
+2020,Dimensões,salas_utilizadas por DS_DEPENDENCIA,1539211.0,1539211.0,OK
+2020,Dimensões,matriculas por DS_LOCALIZACAO,47295294.0,47295294.0,OK
+2020,Dimensões,docentes por DS_LOCALIZACAO,2757776.0,2757776.0,OK
+2020,Dimensões,escolas_ativas por DS_LOCALIZACAO,181279,181279,OK
+2020,Dimensões,salas_utilizadas por DS_LOCALIZACAO,1539211.0,1539211.0,OK
+2020,Dimensões,matriculas por NO_REGIAO,47295294.0,47295294.0,OK
+2020,Dimensões,docentes por NO_REGIAO,2757776.0,2757776.0,OK
+2020,Dimensões,escolas_ativas por NO_REGIAO,181279,181279,OK
+2020,Dimensões,salas_utilizadas por NO_REGIAO,1539211.0,1539211.0,OK
+2021,Dimensões,matriculas por DS_REDE,46668401.0,46668401.0,OK
+2021,Dimensões,docentes por DS_REDE,2846169.0,2846169.0,OK
+2021,Dimensões,escolas_ativas por DS_REDE,180057,180057,OK
+2021,Dimensões,salas_utilizadas por DS_REDE,1520230.0,1520230.0,OK
+2021,Dimensões,matriculas por DS_DEPENDENCIA,46668401.0,46668401.0,OK
+2021,Dimensões,docentes por DS_DEPENDENCIA,2846169.0,2846169.0,OK
+2021,Dimensões,escolas_ativas por DS_DEPENDENCIA,180057,180057,OK
+2021,Dimensões,salas_utilizadas por DS_DEPENDENCIA,1520230.0,1520230.0,OK
+2021,Dimensões,matriculas por DS_LOCALIZACAO,46668401.0,46668401.0,OK
+2021,Dimensões,docentes por DS_LOCALIZACAO,2846169.0,2846169.0,OK
+2021,Dimensões,escolas_ativas por DS_LOCALIZACAO,180057,180057,OK
+2021,Dimensões,salas_utilizadas por DS_LOCALIZACAO,1520230.0,1520230.0,OK
+2021,Dimensões,matriculas por NO_REGIAO,46668401.0,46668401.0,OK
+2021,Dimensões,docentes por NO_REGIAO,2846169.0,2846169.0,OK
+2021,Dimensões,escolas_ativas por NO_REGIAO,180057,180057,OK
+2021,Dimensões,salas_utilizadas por NO_REGIAO,1520230.0,1520230.0,OK
+2022,Dimensões,matriculas por DS_REDE,47382074.0,47382074.0,OK
+2022,Dimensões,docentes por DS_REDE,2924306.0,2924306.0,OK
+2022,Dimensões,escolas_ativas por DS_REDE,184332,184332,OK
+2022,Dimensões,salas_utilizadas por DS_REDE,1537955.0,1537955.0,OK
+2022,Dimensões,matriculas por DS_DEPENDENCIA,47382074.0,47382074.0,OK
+2022,Dimensões,docentes por DS_DEPENDENCIA,2924306.0,2924306.0,OK
+2022,Dimensões,escolas_ativas por DS_DEPENDENCIA,184332,184332,OK
+2022,Dimensões,salas_utilizadas por DS_DEPENDENCIA,1537955.0,1537955.0,OK
+2022,Dimensões,matriculas por DS_LOCALIZACAO,47382074.0,47382074.0,OK
+2022,Dimensões,docentes por DS_LOCALIZACAO,2924306.0,2924306.0,OK
+2022,Dimensões,escolas_ativas por DS_LOCALIZACAO,184332,184332,OK
+2022,Dimensões,salas_utilizadas por DS_LOCALIZACAO,1537955.0,1537955.0,OK
+2022,Dimensões,matriculas por NO_REGIAO,47382074.0,47382074.0,OK
+2022,Dimensões,docentes por NO_REGIAO,2924306.0,2924306.0,OK
+2022,Dimensões,escolas_ativas por NO_REGIAO,184332,184332,OK
+2022,Dimensões,salas_utilizadas por NO_REGIAO,1537955.0,1537955.0,OK
+2023,Dimensões,matriculas por DS_REDE,47304632.0,47304632.0,OK
+2023,Dimensões,docentes por DS_REDE,2934558.0,2934558.0,OK
+2023,Dimensões,escolas_ativas por DS_REDE,180230,180230,OK
+2023,Dimensões,salas_utilizadas por DS_REDE,1577976.0,1577976.0,OK
+2023,Dimensões,matriculas por DS_DEPENDENCIA,47304632.0,47304632.0,OK
+2023,Dimensões,docentes por DS_DEPENDENCIA,2934558.0,2934558.0,OK
+2023,Dimensões,escolas_ativas por DS_DEPENDENCIA,180230,180230,OK
+2023,Dimensões,salas_utilizadas por DS_DEPENDENCIA,1577976.0,1577976.0,OK
+2023,Dimensões,matriculas por DS_LOCALIZACAO,47304632.0,47304632.0,OK
+2023,Dimensões,docentes por DS_LOCALIZACAO,2934558.0,2934558.0,OK
+2023,Dimensões,escolas_ativas por DS_LOCALIZACAO,180230,180230,OK
+2023,Dimensões,salas_utilizadas por DS_LOCALIZACAO,1577976.0,1577976.0,OK
+2023,Dimensões,matriculas por NO_REGIAO,47304632.0,47304632.0,OK
+2023,Dimensões,docentes por NO_REGIAO,2934558.0,2934558.0,OK
+2023,Dimensões,escolas_ativas por NO_REGIAO,180230,180230,OK
+2023,Dimensões,salas_utilizadas por NO_REGIAO,1577976.0,1577976.0,OK
+2024,Dimensões,matriculas por DS_REDE,47088922.0,47088922.0,OK
+2024,Dimensões,docentes por DS_REDE,2939002.0,2939002.0,OK
+2024,Dimensões,escolas_ativas por DS_REDE,181065,181065,OK
+2024,Dimensões,salas_utilizadas por DS_REDE,1608074.0,1608074.0,OK
+2024,Dimensões,matriculas por DS_DEPENDENCIA,47088922.0,47088922.0,OK
+2024,Dimensões,docentes por DS_DEPENDENCIA,2939002.0,2939002.0,OK
+2024,Dimensões,escolas_ativas por DS_DEPENDENCIA,181065,181065,OK
+2024,Dimensões,salas_utilizadas por DS_DEPENDENCIA,1608074.0,1608074.0,OK
+2024,Dimensões,matriculas por DS_LOCALIZACAO,47088922.0,47088922.0,OK
+2024,Dimensões,docentes por DS_LOCALIZACAO,2939002.0,2939002.0,OK
+2024,Dimensões,escolas_ativas por DS_LOCALIZACAO,181065,181065,OK
+2024,Dimensões,salas_utilizadas por DS_LOCALIZACAO,1608074.0,1608074.0,OK
+2024,Dimensões,matriculas por NO_REGIAO,47088922.0,47088922.0,OK
+2024,Dimensões,docentes por NO_REGIAO,2939002.0,2939002.0,OK
+2024,Dimensões,escolas_ativas por NO_REGIAO,181065,181065,OK
+2024,Dimensões,salas_utilizadas por NO_REGIAO,1608074.0,1608074.0,OK
+2025,Dimensões,matriculas por DS_REDE,46018380.0,46018380.0,OK
+2025,Dimensões,docentes por DS_REDE,2992045.0,2992045.0,OK
+2025,Dimensões,escolas_ativas por DS_REDE,180540,180540,OK
+2025,Dimensões,salas_utilizadas por DS_REDE,1646884.0,1646884.0,OK
+2025,Dimensões,matriculas por DS_DEPENDENCIA,46018380.0,46018380.0,OK
+2025,Dimensões,docentes por DS_DEPENDENCIA,2992045.0,2992045.0,OK
+2025,Dimensões,escolas_ativas por DS_DEPENDENCIA,180540,180540,OK
+2025,Dimensões,salas_utilizadas por DS_DEPENDENCIA,1646884.0,1646884.0,OK
+2025,Dimensões,matriculas por DS_LOCALIZACAO,46018380.0,46018380.0,OK
+2025,Dimensões,docentes por DS_LOCALIZACAO,2992045.0,2992045.0,OK
+2025,Dimensões,escolas_ativas por DS_LOCALIZACAO,180540,180540,OK
+2025,Dimensões,salas_utilizadas por DS_LOCALIZACAO,1646884.0,1646884.0,OK
+2025,Dimensões,matriculas por NO_REGIAO,46018380.0,46018380.0,OK
+2025,Dimensões,docentes por NO_REGIAO,2992045.0,2992045.0,OK
+2025,Dimensões,escolas_ativas por NO_REGIAO,180540,180540,OK
+2025,Dimensões,salas_utilizadas por NO_REGIAO,1646884.0,1646884.0,OK
+2019,Infraestrutura,IN_INTERNET: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_INTERNET: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_INTERNET: percentual entre 0 e 1,0 <= percentual <= 1,0.7550693820286297,OK
+2019,Infraestrutura,IN_BIBLIOTECA: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_BIBLIOTECA: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_BIBLIOTECA: percentual entre 0 e 1,0 <= percentual <= 1,0.3658559309029528,OK
+2019,Infraestrutura,IN_SALA_LEITURA: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_SALA_LEITURA: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_SALA_LEITURA: percentual entre 0 e 1,0 <= percentual <= 1,0.260094920753228,OK
+2019,Infraestrutura,IN_LABORATORIO_CIENCIAS: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_LABORATORIO_CIENCIAS: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_LABORATORIO_CIENCIAS: percentual entre 0 e 1,0 <= percentual <= 1,0.11501742771335248,OK
+2019,Infraestrutura,IN_LABORATORIO_INFORMATICA: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_LABORATORIO_INFORMATICA: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_LABORATORIO_INFORMATICA: percentual entre 0 e 1,0 <= percentual <= 1,0.35006138062564396,OK
+2019,Infraestrutura,IN_QUADRA_ESPORTES: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_QUADRA_ESPORTES: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_QUADRA_ESPORTES: percentual entre 0 e 1,0 <= percentual <= 1,0.35968498586053443,OK
+2019,Infraestrutura,IN_BANHEIRO_PNE: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_BANHEIRO_PNE: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_BANHEIRO_PNE: percentual entre 0 e 1,0 <= percentual <= 1,0.44654405155972554,OK
+2019,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: percentual entre 0 e 1,0 <= percentual <= 1,0.5604379946072736,OK
+2019,Infraestrutura,IN_AGUA_POTAVEL: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_AGUA_POTAVEL: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_AGUA_POTAVEL: percentual entre 0 e 1,0 <= percentual <= 1,0.9385536094000044,OK
+2019,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.56560054365697,OK
+2019,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: válidos + nulos = escolas ativas,182468,182468,OK
+2019,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: zero + um = válidos,182468,182468,OK
+2019,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.9645198062125961,OK
+2020,Infraestrutura,IN_INTERNET: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_INTERNET: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_INTERNET: percentual entre 0 e 1,0 <= percentual <= 1,0.7976323788193889,OK
+2020,Infraestrutura,IN_BIBLIOTECA: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_BIBLIOTECA: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_BIBLIOTECA: percentual entre 0 e 1,0 <= percentual <= 1,0.36353355876852805,OK
+2020,Infraestrutura,IN_SALA_LEITURA: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_SALA_LEITURA: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_SALA_LEITURA: percentual entre 0 e 1,0 <= percentual <= 1,0.26817778121017877,OK
+2020,Infraestrutura,IN_LABORATORIO_CIENCIAS: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_LABORATORIO_CIENCIAS: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_LABORATORIO_CIENCIAS: percentual entre 0 e 1,0 <= percentual <= 1,0.1222314774463672,OK
+2020,Infraestrutura,IN_LABORATORIO_INFORMATICA: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_LABORATORIO_INFORMATICA: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_LABORATORIO_INFORMATICA: percentual entre 0 e 1,0 <= percentual <= 1,0.34465106272651547,OK
+2020,Infraestrutura,IN_QUADRA_ESPORTES: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_QUADRA_ESPORTES: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_QUADRA_ESPORTES: percentual entre 0 e 1,0 <= percentual <= 1,0.3659221421124344,OK
+2020,Infraestrutura,IN_BANHEIRO_PNE: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_BANHEIRO_PNE: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_BANHEIRO_PNE: percentual entre 0 e 1,0 <= percentual <= 1,0.467345914308883,OK
+2020,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: percentual entre 0 e 1,0 <= percentual <= 1,0.604526724000022,OK
+2020,Infraestrutura,IN_AGUA_POTAVEL: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_AGUA_POTAVEL: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_AGUA_POTAVEL: percentual entre 0 e 1,0 <= percentual <= 1,0.9442571947109152,OK
+2020,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.5671589097468543,OK
+2020,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: válidos + nulos = escolas ativas,181279,181279,OK
+2020,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: zero + um = válidos,181279,181279,OK
+2020,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.965417946921596,OK
+2021,Infraestrutura,IN_INTERNET: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_INTERNET: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_INTERNET: percentual entre 0 e 1,0 <= percentual <= 1,0.8285431835474322,OK
+2021,Infraestrutura,IN_BIBLIOTECA: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_BIBLIOTECA: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_BIBLIOTECA: percentual entre 0 e 1,0 <= percentual <= 1,0.36645062396907646,OK
+2021,Infraestrutura,IN_SALA_LEITURA: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_SALA_LEITURA: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_SALA_LEITURA: percentual entre 0 e 1,0 <= percentual <= 1,0.2670987520618471,OK
+2021,Infraestrutura,IN_LABORATORIO_CIENCIAS: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_LABORATORIO_CIENCIAS: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_LABORATORIO_CIENCIAS: percentual entre 0 e 1,0 <= percentual <= 1,0.12586569808449546,OK
+2021,Infraestrutura,IN_LABORATORIO_INFORMATICA: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_LABORATORIO_INFORMATICA: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_LABORATORIO_INFORMATICA: percentual entre 0 e 1,0 <= percentual <= 1,0.3348550736711153,OK
+2021,Infraestrutura,IN_QUADRA_ESPORTES: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_QUADRA_ESPORTES: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_QUADRA_ESPORTES: percentual entre 0 e 1,0 <= percentual <= 1,0.3724042941957269,OK
+2021,Infraestrutura,IN_BANHEIRO_PNE: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_BANHEIRO_PNE: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_BANHEIRO_PNE: percentual entre 0 e 1,0 <= percentual <= 1,0.49093898043397366,OK
+2021,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: percentual entre 0 e 1,0 <= percentual <= 1,0.6417967643579533,OK
+2021,Infraestrutura,IN_AGUA_POTAVEL: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_AGUA_POTAVEL: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_AGUA_POTAVEL: percentual entre 0 e 1,0 <= percentual <= 1,0.9528926950909989,OK
+2021,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.5676424687737772,OK
+2021,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: válidos + nulos = escolas ativas,180057,180057,OK
+2021,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: zero + um = válidos,180057,180057,OK
+2021,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.9673881048778997,OK
+2022,Infraestrutura,IN_INTERNET: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_INTERNET: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_INTERNET: percentual entre 0 e 1,0 <= percentual <= 1,0.8745175567686438,OK
+2022,Infraestrutura,IN_BIBLIOTECA: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_BIBLIOTECA: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_BIBLIOTECA: percentual entre 0 e 1,0 <= percentual <= 1,0.3637635847683995,OK
+2022,Infraestrutura,IN_SALA_LEITURA: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_SALA_LEITURA: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_SALA_LEITURA: percentual entre 0 e 1,0 <= percentual <= 1,0.26718608564304475,OK
+2022,Infraestrutura,IN_LABORATORIO_CIENCIAS: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_LABORATORIO_CIENCIAS: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_LABORATORIO_CIENCIAS: percentual entre 0 e 1,0 <= percentual <= 1,0.11989582002854397,OK
+2022,Infraestrutura,IN_LABORATORIO_INFORMATICA: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_LABORATORIO_INFORMATICA: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_LABORATORIO_INFORMATICA: percentual entre 0 e 1,0 <= percentual <= 1,0.3102130802507872,OK
+2022,Infraestrutura,IN_QUADRA_ESPORTES: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_QUADRA_ESPORTES: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_QUADRA_ESPORTES: percentual entre 0 e 1,0 <= percentual <= 1,0.374164922003854,OK
+2022,Infraestrutura,IN_BANHEIRO_PNE: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_BANHEIRO_PNE: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_BANHEIRO_PNE: percentual entre 0 e 1,0 <= percentual <= 1,0.5099765095266919,OK
+2022,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: percentual entre 0 e 1,0 <= percentual <= 1,0.6619482098926547,OK
+2022,Infraestrutura,IN_AGUA_POTAVEL: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_AGUA_POTAVEL: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_AGUA_POTAVEL: percentual entre 0 e 1,0 <= percentual <= 1,0.9581780722262638,OK
+2022,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.5707185419246639,OK
+2022,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: válidos + nulos = escolas ativas,184332,184332,OK
+2022,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: zero + um = válidos,180073,180073,OK
+2022,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.9684294702703904,OK
+2023,Infraestrutura,IN_INTERNET: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_INTERNET: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_INTERNET: percentual entre 0 e 1,0 <= percentual <= 1,0.9091438717194695,OK
+2023,Infraestrutura,IN_BIBLIOTECA: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_BIBLIOTECA: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_BIBLIOTECA: percentual entre 0 e 1,0 <= percentual <= 1,0.36554402707651334,OK
+2023,Infraestrutura,IN_SALA_LEITURA: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_SALA_LEITURA: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_SALA_LEITURA: percentual entre 0 e 1,0 <= percentual <= 1,0.2725517394440437,OK
+2023,Infraestrutura,IN_LABORATORIO_CIENCIAS: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_LABORATORIO_CIENCIAS: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_LABORATORIO_CIENCIAS: percentual entre 0 e 1,0 <= percentual <= 1,0.12548410364534207,OK
+2023,Infraestrutura,IN_LABORATORIO_INFORMATICA: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_LABORATORIO_INFORMATICA: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_LABORATORIO_INFORMATICA: percentual entre 0 e 1,0 <= percentual <= 1,0.30222493480552626,OK
+2023,Infraestrutura,IN_QUADRA_ESPORTES: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_QUADRA_ESPORTES: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_QUADRA_ESPORTES: percentual entre 0 e 1,0 <= percentual <= 1,0.38050269100593687,OK
+2023,Infraestrutura,IN_BANHEIRO_PNE: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_BANHEIRO_PNE: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_BANHEIRO_PNE: percentual entre 0 e 1,0 <= percentual <= 1,0.5293291904788326,OK
+2023,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: percentual entre 0 e 1,0 <= percentual <= 1,0.6844642956222604,OK
+2023,Infraestrutura,IN_AGUA_POTAVEL: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_AGUA_POTAVEL: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_AGUA_POTAVEL: percentual entre 0 e 1,0 <= percentual <= 1,0.9561005382011873,OK
+2023,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.5732674915385896,OK
+2023,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: válidos + nulos = escolas ativas,180230,180230,OK
+2023,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: zero + um = válidos,180230,180230,OK
+2023,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.96872884647395,OK
+2024,Infraestrutura,IN_INTERNET: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_INTERNET: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_INTERNET: percentual entre 0 e 1,0 <= percentual <= 1,0.9210559743738437,OK
+2024,Infraestrutura,IN_BIBLIOTECA: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_BIBLIOTECA: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_BIBLIOTECA: percentual entre 0 e 1,0 <= percentual <= 1,0.3676525004832519,OK
+2024,Infraestrutura,IN_SALA_LEITURA: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_SALA_LEITURA: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_SALA_LEITURA: percentual entre 0 e 1,0 <= percentual <= 1,0.28055670615524814,OK
+2024,Infraestrutura,IN_LABORATORIO_CIENCIAS: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_LABORATORIO_CIENCIAS: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_LABORATORIO_CIENCIAS: percentual entre 0 e 1,0 <= percentual <= 1,0.13111313616657003,OK
+2024,Infraestrutura,IN_LABORATORIO_INFORMATICA: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_LABORATORIO_INFORMATICA: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_LABORATORIO_INFORMATICA: percentual entre 0 e 1,0 <= percentual <= 1,0.2955347527131141,OK
+2024,Infraestrutura,IN_QUADRA_ESPORTES: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_QUADRA_ESPORTES: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_QUADRA_ESPORTES: percentual entre 0 e 1,0 <= percentual <= 1,0.3860878689973214,OK
+2024,Infraestrutura,IN_BANHEIRO_PNE: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_BANHEIRO_PNE: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_BANHEIRO_PNE: percentual entre 0 e 1,0 <= percentual <= 1,0.5487808245657637,OK
+2024,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: percentual entre 0 e 1,0 <= percentual <= 1,0.7217131969182338,OK
+2024,Infraestrutura,IN_AGUA_POTAVEL: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_AGUA_POTAVEL: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_AGUA_POTAVEL: percentual entre 0 e 1,0 <= percentual <= 1,0.9632286747852981,OK
+2024,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.5812222130174247,OK
+2024,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: válidos + nulos = escolas ativas,181065,181065,OK
+2024,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: zero + um = válidos,181065,181065,OK
+2024,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.9688564880015464,OK
+2025,Infraestrutura,IN_INTERNET: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_INTERNET: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_INTERNET: percentual entre 0 e 1,0 <= percentual <= 1,0.9458402570067576,OK
+2025,Infraestrutura,IN_BIBLIOTECA: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_BIBLIOTECA: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_BIBLIOTECA: percentual entre 0 e 1,0 <= percentual <= 1,0.36846128281821205,OK
+2025,Infraestrutura,IN_SALA_LEITURA: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_SALA_LEITURA: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_SALA_LEITURA: percentual entre 0 e 1,0 <= percentual <= 1,0.30778220892876923,OK
+2025,Infraestrutura,IN_LABORATORIO_CIENCIAS: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_LABORATORIO_CIENCIAS: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_LABORATORIO_CIENCIAS: percentual entre 0 e 1,0 <= percentual <= 1,0.14200177246039658,OK
+2025,Infraestrutura,IN_LABORATORIO_INFORMATICA: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_LABORATORIO_INFORMATICA: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_LABORATORIO_INFORMATICA: percentual entre 0 e 1,0 <= percentual <= 1,0.2885897861969647,OK
+2025,Infraestrutura,IN_QUADRA_ESPORTES: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_QUADRA_ESPORTES: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_QUADRA_ESPORTES: percentual entre 0 e 1,0 <= percentual <= 1,0.40323474022377315,OK
+2025,Infraestrutura,IN_BANHEIRO_PNE: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_BANHEIRO_PNE: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_BANHEIRO_PNE: percentual entre 0 e 1,0 <= percentual <= 1,0.5704608397031129,OK
+2025,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_ACESSIBILIDADE_INEXISTENTE: percentual entre 0 e 1,0 <= percentual <= 1,0.7851445663010967,OK
+2025,Infraestrutura,IN_AGUA_POTAVEL: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_AGUA_POTAVEL: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_AGUA_POTAVEL: percentual entre 0 e 1,0 <= percentual <= 1,0.9657416638971973,OK
+2025,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_ESGOTO_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.5836158192090396,OK
+2025,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: válidos + nulos = escolas ativas,180540,180540,OK
+2025,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: zero + um = válidos,180540,180540,OK
+2025,Infraestrutura,IN_ENERGIA_REDE_PUBLICA: percentual entre 0 e 1,0 <= percentual <= 1,0.9686606846128282,OK
+2019,Acessibilidade,Preservação do denominador válido,182468,182468,OK
+2020,Acessibilidade,Preservação do denominador válido,181279,181279,OK
+2021,Acessibilidade,Preservação do denominador válido,180057,180057,OK
+2022,Acessibilidade,Preservação do denominador válido,180073,180073,OK
+2023,Acessibilidade,Preservação do denominador válido,180230,180230,OK
+2024,Acessibilidade,Preservação do denominador válido,181065,181065,OK
+2025,Acessibilidade,Preservação do denominador válido,180540,180540,OK
+2019-2025,Temporal,Registros Escola x Ano maiores ou iguais a escolas distintas,ID_ANO_ENTIDADE >= CO_ENTIDADE,1545901 >= 250930,OK
