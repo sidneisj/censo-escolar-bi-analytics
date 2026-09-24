@@ -672,3 +672,438 @@ Filtros poderão ser combinados conforme o objetivo de cada dashboard.
 | Infraestrutura | indicadores `IN_*` selecionados | — |
 
 As dimensões definidas atendem às perguntas analíticas estabelecidas para o projeto e serão utilizadas como base para definição das métricas e KPIs na próxima etapa.
+
+---
+
+## 10. Métricas e KPIs do dashboard
+
+As métricas e KPIs foram definidos a partir das perguntas analíticas estabelecidas para o projeto e das informações disponíveis na base consolidada de 2019 a 2025.
+
+Os indicadores foram divididos em:
+
+- KPIs principais;
+- métricas de apoio;
+- indicadores de infraestrutura;
+- métricas de evolução histórica.
+
+---
+
+### 10.1 Princípio de contexto temporal
+
+A base possui granularidade:
+
+`Escola × Ano`
+
+Por esse motivo, os principais KPIs quantitativos devem sempre ser interpretados dentro de um contexto temporal.
+
+No dashboard, os valores em destaque deverão representar preferencialmente um único ano selecionado.
+
+Exemplo:
+
+`Ano selecionado = 2025`
+
+Nesse contexto, os KPIs representam a situação observada no Censo Escolar de 2025.
+
+Ao analisar vários anos simultaneamente, a soma de determinados indicadores representa acumulados de registros anuais e não necessariamente uma quantidade única de entidades.
+
+As regras detalhadas de agregação serão formalizadas na issue específica de cálculos do Tableau.
+
+---
+
+## 10.2 KPI — Total de Matrículas
+
+**Nome de apresentação:** Matrículas
+
+**Campo de origem:**
+
+`QT_MAT_BAS`
+
+**Definição:**
+
+Quantidade total de matrículas da educação básica registradas nas escolas dentro do contexto selecionado.
+
+**Agregação básica:**
+
+`SUM(QT_MAT_BAS)`
+
+**Segmentações aplicáveis:**
+
+- Ano;
+- Região;
+- UF;
+- Município;
+- Rede;
+- Dependência Administrativa;
+- Localização.
+
+**Interpretação:**
+
+Representa o volume de matrículas da educação básica no recorte selecionado.
+
+**Valor de controle para 2025:**
+
+`46.018.380`
+
+---
+
+## 10.3 KPI — Total de Docentes
+
+**Nome de apresentação:** Docentes
+
+**Campo de origem:**
+
+`QT_DOC_BAS`
+
+**Definição:**
+
+Quantidade total de docentes da educação básica associada às escolas dentro do contexto selecionado.
+
+**Agregação básica:**
+
+`SUM(QT_DOC_BAS)`
+
+**Segmentações aplicáveis:**
+
+- Ano;
+- Região;
+- UF;
+- Município;
+- Rede;
+- Dependência Administrativa;
+- Localização.
+
+**Interpretação:**
+
+Representa o total de docentes registrado no recorte analisado.
+
+**Valor de controle para 2025:**
+
+`2.992.045`
+
+---
+
+## 10.4 KPI — Escolas Ativas
+
+**Nome de apresentação:** Escolas Ativas
+
+**Campo de origem:**
+
+`FL_ESCOLA_ATIVA`
+
+**Definição:**
+
+Quantidade de registros de escolas classificadas como em atividade no respectivo ano do Censo Escolar.
+
+**Agregação básica em contexto de um único ano:**
+
+`SUM(FL_ESCOLA_ATIVA)`
+
+**Segmentações aplicáveis:**
+
+- Ano;
+- Região;
+- UF;
+- Município;
+- Rede;
+- Dependência Administrativa;
+- Localização.
+
+**Interpretação:**
+
+Representa a quantidade de escolas em funcionamento no período e recorte selecionados.
+
+**Valor de controle para 2025:**
+
+`180.540`
+
+Quando múltiplos anos forem analisados simultaneamente, essa medida deverá ser interpretada como quantidade de registros Escola × Ano ativos e não como quantidade de escolas distintas existentes em todo o período.
+
+---
+
+## 10.5 KPI — Salas Utilizadas
+
+**Nome de apresentação:** Salas Utilizadas
+
+**Campo de origem:**
+
+`QT_SALAS_UTILIZADAS`
+
+**Definição:**
+
+Quantidade total de salas utilizadas pelas escolas dentro do contexto selecionado.
+
+**Agregação básica:**
+
+`SUM(QT_SALAS_UTILIZADAS)`
+
+**Segmentações aplicáveis:**
+
+- Ano;
+- Região;
+- UF;
+- Município;
+- Rede;
+- Dependência Administrativa;
+- Localização.
+
+**Interpretação:**
+
+Representa a estrutura física utilizada pelas escolas no respectivo recorte.
+
+**Valor de controle para 2025:**
+
+`1.646.884`
+
+---
+
+## 10.6 Métrica — Escolas Registradas
+
+**Nome de apresentação:** Escolas Registradas
+
+**Campo principal:**
+
+`ID_ANO_ENTIDADE`
+
+**Definição:**
+
+Quantidade de registros de entidades escolares presentes no Censo dentro do contexto temporal selecionado, independentemente da situação de funcionamento.
+
+Em um único ano, pode ser calculada pela contagem dos registros da base.
+
+**Uso:**
+
+Essa métrica será utilizada principalmente para contextualização e análise da situação de funcionamento.
+
+Ela não deverá substituir o KPI de Escolas Ativas quando o objetivo for representar escolas efetivamente em funcionamento.
+
+---
+
+## 10.7 Métricas por Rede
+
+A variável:
+
+`DS_REDE`
+
+permite segmentar os principais indicadores entre:
+
+- Pública;
+- Privada.
+
+As métricas aplicáveis incluem:
+
+- Matrículas por Rede;
+- Docentes por Rede;
+- Escolas Ativas por Rede;
+- Salas Utilizadas por Rede;
+- participação percentual de cada rede.
+
+Essas métricas permitirão analisar a distribuição dos recursos e da população escolar entre os setores público e privado.
+
+---
+
+## 10.8 Métricas por Dependência Administrativa
+
+A variável:
+
+`DS_DEPENDENCIA`
+
+permite analisar os indicadores segundo:
+
+- Federal;
+- Estadual;
+- Municipal;
+- Privada.
+
+Poderão ser analisados:
+
+- Matrículas;
+- Docentes;
+- Escolas Ativas;
+- Salas Utilizadas;
+- participação percentual de cada dependência.
+
+---
+
+## 10.9 Métricas por Localização
+
+A variável:
+
+`DS_LOCALIZACAO`
+
+permite comparar:
+
+- Urbana;
+- Rural.
+
+Serão analisados, conforme o contexto:
+
+- Matrículas;
+- Docentes;
+- Escolas Ativas;
+- Salas Utilizadas;
+- infraestrutura escolar.
+
+Essa dimensão será especialmente relevante para identificar diferenças territoriais na estrutura educacional.
+
+---
+
+## 10.10 Indicadores de Infraestrutura
+
+Os indicadores de infraestrutura deverão representar a proporção de escolas que possuem determinada característica.
+
+Os campos disponíveis são:
+
+- `IN_INTERNET`;
+- `IN_BIBLIOTECA`;
+- `IN_SALA_LEITURA`;
+- `IN_LABORATORIO_CIENCIAS`;
+- `IN_LABORATORIO_INFORMATICA`;
+- `IN_QUADRA_ESPORTES`;
+- `IN_BANHEIRO_PNE`;
+- `IN_ACESSIBILIDADE_INEXISTENTE`;
+- `IN_AGUA_POTAVEL`;
+- `IN_ESGOTO_REDE_PUBLICA`;
+- `IN_ENERGIA_REDE_PUBLICA`.
+
+Para os indicadores cuja lógica é positiva:
+
+`1 = possui`
+
+`0 = não possui`
+
+A métrica principal será:
+
+`Percentual de escolas com o recurso`
+
+O denominador deverá considerar escolas em atividade e registros com informação válida para o respectivo indicador.
+
+Valores `NA` não deverão ser tratados automaticamente como ausência do recurso.
+
+---
+
+### 10.10.1 Exemplo conceitual
+
+Para Internet:
+
+**Quantidade de escolas com Internet**
+
+Soma dos registros em que:
+
+`IN_INTERNET = 1`
+
+**Percentual de escolas com Internet**
+
+Quantidade de escolas ativas com `IN_INTERNET = 1` dividida pela quantidade de escolas ativas com informação válida em `IN_INTERNET`.
+
+O mesmo princípio será aplicado aos demais indicadores de infraestrutura.
+
+---
+
+### 10.10.2 Acessibilidade
+
+O campo:
+
+`IN_ACESSIBILIDADE_INEXISTENTE`
+
+possui interpretação inversa aos demais indicadores.
+
+Nesse campo:
+
+`1 = inexistência de recursos de acessibilidade`
+
+Por isso, ele não deverá ser apresentado diretamente como “escolas com acessibilidade”.
+
+Caso seja necessário apresentar um indicador positivo de acessibilidade, deverá ser criado um campo calculado específico no Tableau, respeitando os valores válidos e ausentes.
+
+A regra será formalizada na etapa de campos calculados.
+
+---
+
+## 10.11 Métricas de Evolução Histórica
+
+Os principais indicadores deverão permitir análise ao longo de 2019 a 2025.
+
+Serão analisadas as evoluções de:
+
+- Matrículas;
+- Docentes;
+- Escolas Ativas;
+- Salas Utilizadas;
+- indicadores selecionados de infraestrutura.
+
+A análise histórica poderá utilizar:
+
+- valor absoluto anual;
+- diferença absoluta em relação ao ano anterior;
+- variação percentual em relação ao ano anterior.
+
+Exemplo conceitual:
+
+`Variação % de Matrículas`
+
+compara o total de matrículas de um ano com o total do ano imediatamente anterior.
+
+A fórmula e o comportamento desses cálculos no Tableau serão definidos na issue de regras de agregação e campos calculados.
+
+---
+
+## 10.12 Métricas Geográficas
+
+Todos os principais KPIs poderão ser analisados segundo a hierarquia:
+
+`Brasil → Região → UF → Município`
+
+Isso permitirá responder questões como:
+
+- quais regiões concentram mais matrículas;
+- como o número de escolas evolui por estado;
+- quais municípios apresentam determinada característica de infraestrutura;
+- como as redes pública e privada se distribuem territorialmente.
+
+Os valores nacionais deverão corresponder à agregação dos registros presentes na base, sem criação de linhas adicionais representando o Brasil.
+
+---
+
+## 10.13 KPIs principais do dashboard
+
+Os indicadores prioritários para apresentação em destaque serão:
+
+| KPI | Campo principal | Agregação básica |
+|---|---|---|
+| Matrículas | `QT_MAT_BAS` | Soma |
+| Docentes | `QT_DOC_BAS` | Soma |
+| Escolas Ativas | `FL_ESCOLA_ATIVA` | Soma em contexto anual |
+| Salas Utilizadas | `QT_SALAS_UTILIZADAS` | Soma |
+
+Esses KPIs formarão o panorama principal do sistema educacional no período selecionado.
+
+---
+
+## 10.14 Indicadores analíticos complementares
+
+Além dos KPIs principais, o dashboard poderá utilizar:
+
+- distribuição de matrículas por rede;
+- distribuição de escolas por dependência administrativa;
+- distribuição urbano × rural;
+- participação percentual por categoria;
+- percentual de escolas com infraestrutura;
+- evolução anual dos principais indicadores;
+- comparações entre regiões, estados e municípios.
+
+Esses indicadores não alteram a granularidade do modelo e serão derivados das medidas e dimensões já existentes.
+
+---
+
+## 10.15 Resumo das regras
+
+As principais regras estabelecidas são:
+
+1. KPIs principais devem possuir contexto temporal explícito;
+2. matrículas, docentes e salas utilizadas utilizam soma;
+3. escolas ativas utilizam `FL_ESCOLA_ATIVA`;
+4. escolas distintas exigem atenção quando vários anos estiverem selecionados;
+5. indicadores de infraestrutura devem considerar apenas respostas válidas;
+6. `NA` não deve ser convertido automaticamente em zero;
+7. indicadores históricos devem preservar a comparabilidade definida durante o ETL;
+8. cálculos de variação e percentuais serão formalizados na próxima etapa.
