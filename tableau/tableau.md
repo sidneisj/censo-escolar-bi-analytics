@@ -165,3 +165,150 @@ Foram verificados:
 - localização dos municípios brasileiros no mapa.
 
 Com isso, a fonte está preparada para criação das hierarquias, campos calculados e visualizações.
+
+---
+
+## 9. Hierarquias e campos calculados
+
+Após a configuração inicial da fonte de dados, foram implementadas no Tableau Cloud as hierarquias e medidas calculadas definidas durante a etapa de modelagem analítica.
+
+### 9.1 Hierarquia Geografia
+
+Foi criada a hierarquia:
+
+`Região → UF → Município`
+
+A estrutura foi validada no Tableau por meio de drill-down entre os três níveis.
+
+O contexto técnico utilizado para geocodificação permanece separado da hierarquia analítica:
+
+`País → Estado → Município`
+
+Dessa forma, País e Estado auxiliam o mecanismo de mapas, enquanto Região, UF e Município representam a navegação analítica utilizada nos dashboards.
+
+### 9.2 Hierarquia Estrutura Administrativa
+
+Foi criada a hierarquia:
+
+`Rede → Dependência Administrativa`
+
+O drill-down foi validado com a seguinte estrutura:
+
+```text
+Pública
+├── Federal
+├── Estadual
+└── Municipal
+
+Privada
+└── Privada
+```
+
+### 9.3 Indicadores de infraestrutura
+
+Foram criados campos calculados para os indicadores de infraestrutura considerando somente escolas em atividade.
+
+O padrão utilizado foi:
+
+```text
+IF [Escola Ativa] = 1 THEN
+    [Indicador]
+END
+```
+
+Foram implementados campos para:
+
+- Internet;
+- Biblioteca;
+- Sala de Leitura;
+- Laboratório de Ciências;
+- Laboratório de Informática;
+- Quadra de Esportes;
+- Banheiro PNE;
+- Água Potável;
+- Esgoto em Rede Pública;
+- Energia em Rede Pública.
+
+Os percentuais são calculados utilizando a média dos indicadores binários:
+
+`AVG([Indicador - Escola Ativa])`
+
+Essa abordagem preserva:
+
+- `1` como presença do recurso;
+- `0` como ausência do recurso;
+- `NULL` fora do denominador.
+
+### 9.4 Acessibilidade
+
+Como o campo original `IN_ACESSIBILIDADE_INEXISTENTE` possui interpretação inversa, foi criado o campo positivo:
+
+`Acessibilidade - Escola Ativa`
+
+utilizando a lógica:
+
+```text
+IF [Escola Ativa] = 1 THEN
+    IF ISNULL([Acessibilidade Inexistente]) THEN
+        NULL
+    ELSE
+        1 - [Acessibilidade Inexistente]
+    END
+END
+```
+
+O resultado passa a ser interpretado como:
+
+- `1` = possui algum recurso de acessibilidade;
+- `0` = não possui recurso de acessibilidade;
+- `NULL` = informação não disponível.
+
+### 9.5 Medidas de contagem
+
+Também foram criados os campos calculados:
+
+**Escolas Distintas**
+
+`COUNTD([Código da Escola])`
+
+**Registros Escola × Ano**
+
+`COUNTD([ID Escola × Ano])`
+
+**Escolas Ativas Distintas**
+
+```text
+COUNTD(
+    IF [Escola Ativa] = 1 THEN
+        [Código da Escola]
+    END
+)
+```
+
+Essas medidas permitem diferenciar escolas únicas de observações históricas Escola × Ano.
+
+### 9.6 Validação no Tableau Cloud
+
+Os cálculos foram testados diretamente no Tableau Cloud utilizando o ano de 2025.
+
+Foram confirmados os KPIs:
+
+- Matrículas: `46.018.380`;
+- Docentes: `2.992.045`;
+- Escolas Ativas: `180.540`;
+- Salas Utilizadas: `1.646.884`.
+
+Também foram confirmadas as contagens:
+
+- Escolas Distintas: `214.192`;
+- Registros Escola × Ano: `214.192`;
+- Escolas Ativas Distintas: `180.540`.
+
+Indicadores de infraestrutura testados:
+
+- Internet: `94,58%`;
+- Acessibilidade: `78,51%`.
+
+As hierarquias Geografia e Estrutura Administrativa também foram validadas por meio de drill-down.
+
+Com isso, as hierarquias e os principais campos calculados estão prontos para utilização nos dashboards.
