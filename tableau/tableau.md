@@ -905,3 +905,157 @@ Com esta definição, cada dashboard possui:
 - wireframe.
 
 A construção das visualizações poderá, portanto, iniciar sem necessidade de redefinir a arquitetura geral do produto.
+
+---
+
+## 11. Dashboard Panorama Geral
+
+Foi implementado o primeiro dashboard analítico do projeto:
+
+`D01 - Panorama Geral`
+
+O objetivo da tela é apresentar uma visão executiva do Censo Escolar para o ano selecionado, permitindo análises rápidas por recortes geográficos e administrativos.
+
+### 11.1 Estrutura do dashboard
+
+O dashboard foi desenvolvido em layout desktop com tamanho fixo:
+
+`1200 × 800 px`
+
+A estrutura visual é composta por:
+
+- cabeçalho com título e subtítulo;
+- faixa de filtros;
+- quatro KPIs;
+- quatro visualizações analíticas;
+- rodapé com identificação da fonte e período analisado.
+
+### 11.2 Filtros
+
+Foram disponibilizados os seguintes filtros:
+
+- Ano;
+- Região;
+- UF;
+- Rede.
+
+O estado padrão do dashboard é:
+
+- Ano: `2025`;
+- Região: `(Tudo)`;
+- UF: `(Tudo)`;
+- Rede: `(Tudo)`.
+
+O filtro `Ano` utiliza seleção única.
+
+Os filtros `Região`, `UF` e `Rede` permitem múltiplos valores.
+
+O filtro `UF` utiliza somente valores relevantes, permitindo que a lista de estados seja restringida de acordo com a Região selecionada.
+
+Os filtros são aplicados às worksheets que utilizam a mesma fonte de dados.
+
+### 11.3 KPIs
+
+Foram implementados quatro cards de indicadores:
+
+- `WS01 - KPI Matrículas`;
+- `WS02 - KPI Docentes`;
+- `WS03 - KPI Escolas Ativas`;
+- `WS04 - KPI Salas Utilizadas`.
+
+Valores de referência para 2025:
+
+| Indicador | Valor |
+| --- | ---: |
+| Matrículas | 46.018.380 |
+| Docentes | 2.992.045 |
+| Escolas Ativas | 180.540 |
+| Salas Utilizadas | 1.646.884 |
+
+Os cards utilizam fundo `#F5F5F5`, mantendo destaque visual em relação às áreas analíticas.
+
+### 11.4 Visualizações
+
+Foram implementadas quatro visualizações em barras horizontais:
+
+- `WS05 - Matrículas por Região`;
+- `WS06 - Matrículas por Rede`;
+- `WS07 - Escolas Ativas por Dependência`;
+- `WS08 - Escolas Ativas por Localização`.
+
+As barras utilizam a cor:
+
+`#4E79A7`
+
+com opacidade de aproximadamente `90%`.
+
+Foi adotada uma única cor principal para evitar que cores diferentes sejam interpretadas como categorias ou significados analíticos inexistentes.
+
+Os títulos técnicos das worksheets não são exibidos no dashboard. Cada visualização possui título amigável específico.
+
+Os rótulos de campo redundantes foram ocultados, mantendo a possibilidade de ordenação das categorias pela medida apresentada.
+
+### 11.5 Layout e padronização
+
+Foram utilizados containers horizontais flutuantes para organizar:
+
+- KPIs;
+- primeira linha de visualizações;
+- segunda linha de visualizações.
+
+Os containers principais possuem alinhamento horizontal consistente.
+
+Padrões adotados:
+
+- margem lateral principal próxima de `20 px`;
+- espaçamento vertical consistente entre os blocos;
+- bordas discretas;
+- fundo branco nas áreas analíticas;
+- KPIs com fundo cinza claro;
+- título alinhado à esquerda;
+- filtros agrupados na parte superior sem associação visual direta com os cards de KPI.
+
+### 11.6 Fonte e período
+
+O rodapé apresenta:
+
+`Fonte: INEP — Censo Escolar | Período analisado: 2019–2025`
+
+### 11.7 Validação funcional
+
+Foram realizados testes de consistência dos indicadores e filtros.
+
+Para 2024, o dashboard retornou:
+
+| Indicador | Valor esperado |
+| --- | ---: |
+| Matrículas | 47.088.922 |
+| Docentes | 2.939.002 |
+| Escolas Ativas | 181.065 |
+| Salas Utilizadas | 1.608.074 |
+
+Os valores coincidiram com a camada analítica previamente validada.
+
+Também foram testados filtros combinados envolvendo:
+
+- Ano;
+- Região;
+- UF;
+- Rede.
+
+Foi validado o comportamento encadeado:
+
+`Região → UF → demais visualizações`
+
+Também foram realizadas verificações de reconciliação entre totais e segmentações, incluindo:
+
+- Pública + Privada = total de Matrículas;
+- Urbana + Rural = total de Escolas Ativas;
+- dependências administrativas = total de Escolas Ativas;
+- soma das regiões = total de Matrículas.
+
+O dashboard foi salvo com o estado inicial:
+
+`2025 | Todas as Regiões | Todas as UFs | Todas as Redes`
+
+O recurso nativo de Reverter do Tableau pode ser utilizado para retornar ao estado salvo da visualização.
