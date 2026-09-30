@@ -1059,3 +1059,123 @@ O dashboard foi salvo com o estado inicial:
 `2025 | Todas as Regiões | Todas as UFs | Todas as Redes`
 
 O recurso nativo de Reverter do Tableau pode ser utilizado para retornar ao estado salvo da visualização.
+
+---
+
+## 12. Dashboard Geografia e Administração
+
+Foi implementado o dashboard:
+
+`D03 - Geografia e Administração`
+
+O objetivo da tela é permitir análise territorial das matrículas e exploração da estrutura administrativa das escolas brasileiras.
+
+### 12.1 Estrutura
+
+O dashboard mantém o padrão visual definido para o projeto:
+
+- layout desktop `1200 × 800`;
+- título e subtítulo;
+- filtros superiores;
+- bloco principal de análise geográfica;
+- bloco inferior de estrutura administrativa;
+- rodapé com fonte e período.
+
+### 12.2 Filtros
+
+Foram disponibilizados:
+
+- Ano;
+- Rede;
+- Dependência Administrativa;
+- Localização.
+
+Estado padrão:
+
+`2025 | Todas as Redes | Todas as Dependências | Todas as Localizações`
+
+Os filtros são aplicados às worksheets que utilizam a mesma fonte de dados.
+
+### 12.3 Análise geográfica
+
+Foram criadas:
+
+- `WS09 - Mapa Matrículas por UF`;
+- `WS10 - Matrículas por UF`.
+
+O mapa utiliza:
+
+- Estado como dimensão geográfica;
+- País = Brasil como contexto de geocodificação;
+- `SUM(Matrículas)` como medida;
+- mapa preenchido com escala sequencial de azul.
+
+O ranking apresenta as 27 UFs ordenadas de forma decrescente pelo total de matrículas.
+
+Valores de referência para 2025 incluem:
+
+| UF | Matrículas |
+| --- | ---: |
+| SP | 9.600.318 |
+| MG | 4.220.829 |
+| BA | 3.345.058 |
+| RJ | 3.319.771 |
+
+O ranking mantém todas as UFs disponíveis com rolagem vertical.
+
+### 12.4 Interação do mapa
+
+Foi configurada uma ação de filtro no dashboard.
+
+Ao selecionar uma UF no mapa, são filtradas apenas:
+
+- `WS06 - Matrículas por Rede`;
+- `WS07 - Escolas Ativas por Dependência`.
+
+O ranking por UF permanece com contexto nacional, permitindo comparar o estado selecionado com as demais UFs.
+
+Ao limpar a seleção do mapa, os gráficos administrativos retornam à visão completa.
+
+Foi adicionada ao mapa a orientação:
+
+`Clique em um estado para detalhar os gráficos abaixo`
+
+### 12.5 Estrutura administrativa
+
+O bloco inferior utiliza:
+
+- `WS06 - Matrículas por Rede`;
+- `WS07 - Escolas Ativas por Dependência`.
+
+As visualizações mantêm o padrão definido no Panorama Geral:
+
+- barras horizontais;
+- cor `#4E79A7`;
+- aproximadamente 90% de opacidade;
+- sem borda nas barras;
+- títulos amigáveis;
+- rótulos de valores visíveis.
+
+### 12.6 Layout
+
+O bloco geográfico foi organizado com aproximadamente:
+
+- 65% da largura para o mapa;
+- 35% para o ranking.
+
+A seção administrativa utiliza divisão aproximada de 50% para cada visualização.
+
+O dashboard mantém alinhamento, bordas, espaçamentos e tipografia consistentes com `D01 - Panorama Geral`.
+
+### 12.7 Validação
+
+Foram validados:
+
+- funcionamento dos filtros globais;
+- consistência entre mapa e ranking;
+- ordenação das UFs;
+- ação de seleção do mapa;
+- retorno à visão nacional após limpar a seleção;
+- atualização dos gráficos administrativos conforme UF selecionada.
+
+O refinamento específico de enquadramento e zoom do mapa será tratado separadamente como melhoria visual.
