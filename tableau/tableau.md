@@ -1179,3 +1179,190 @@ Foram validados:
 - atualização dos gráficos administrativos conforme UF selecionada.
 
 O refinamento específico de enquadramento e zoom do mapa será tratado separadamente como melhoria visual.
+
+---
+
+## 13. Dashboard Infraestrutura Escolar
+
+Foi implementado o dashboard:
+
+`D04 - Infraestrutura Escolar`
+
+O objetivo da tela é analisar a disponibilidade de recursos de infraestrutura nas escolas em atividade e permitir comparação entre as redes Pública e Privada.
+
+### 13.1 Estrutura
+
+O dashboard mantém o padrão visual do projeto:
+
+- layout desktop `1200 × 800`;
+- título e subtítulo;
+- filtros superiores;
+- visão geral dos indicadores de infraestrutura;
+- análise detalhada por Rede;
+- rodapé com fonte e período analisado.
+
+### 13.2 Filtros
+
+Foram disponibilizados:
+
+- Ano;
+- Região;
+- UF;
+- Rede;
+- Localização.
+
+Estado padrão:
+
+`2025 | Todas as Regiões | Todas as UFs | Todas as Redes | Todas as Localizações`
+
+O filtro de UF permanece dependente do contexto geográfico selecionado por Região.
+
+### 13.3 Indicadores de infraestrutura
+
+A worksheet:
+
+`WS11 - Infraestrutura Geral`
+
+apresenta 11 indicadores:
+
+- Água Potável;
+- Energia em Rede Pública;
+- Esgoto em Rede Pública;
+- Internet;
+- Acessibilidade;
+- Banheiro PNE;
+- Biblioteca;
+- Sala de Leitura;
+- Laboratório de Informática;
+- Laboratório de Ciências;
+- Quadra de Esportes.
+
+Os indicadores utilizam os campos calculados referentes somente às escolas em atividade.
+
+Como os campos possuem valores `0/1`, os percentuais são calculados por:
+
+`AVG(indicador)`
+
+Valores nulos não são convertidos automaticamente para zero.
+
+A escala dos gráficos foi fixada entre:
+
+`0% e 100%`
+
+permitindo comparação consistente entre diferentes filtros.
+
+### 13.4 Ordem dos indicadores
+
+Foi adotada ordem temática em vez de ordem alfabética:
+
+1. serviços básicos;
+2. conectividade e acessibilidade;
+3. recursos e espaços pedagógicos.
+
+Essa organização mantém indicadores relacionados próximos e evita que a posição dos itens dependa dos valores apresentados.
+
+### 13.5 Comparação por Rede
+
+A worksheet:
+
+`WS12 - Infraestrutura por Rede`
+
+compara:
+
+- Pública;
+- Privada.
+
+Inicialmente foram avaliadas múltiplas formas de apresentação dos 11 indicadores simultaneamente.
+
+A versão final utiliza somente um indicador por vez, permitindo maior legibilidade e reduzindo densidade visual.
+
+Foi criado o parâmetro:
+
+`Indicador de Infraestrutura`
+
+e o campo calculado:
+
+`Indicador Selecionado`
+
+responsável por retornar o indicador correspondente à escolha atual.
+
+A visualização utiliza:
+
+`AVG(Indicador Selecionado)`
+
+com escala fixa de `0% a 100%`.
+
+### 13.6 Ação de parâmetro
+
+Foi configurada uma ação de parâmetro no dashboard.
+
+Origem:
+
+`WS11 - Infraestrutura Geral`
+
+Destino:
+
+`Indicador de Infraestrutura`
+
+Campo utilizado:
+
+`Nomes de medida`
+
+Ao selecionar uma barra na visão geral, o parâmetro é atualizado e a `WS12` passa automaticamente a detalhar aquele indicador.
+
+Exemplo:
+
+`Quadra de Esportes (%)`
+
+resulta na comparação:
+
+- Privada: `45,87%`;
+- Pública: `38,62%`.
+
+O título da worksheet também é dinâmico, apresentando o indicador selecionado.
+
+Exemplo:
+
+`Infraestrutura por Rede - Quadra de Esportes (%)`
+
+### 13.7 Identidade visual
+
+A visão geral utiliza:
+
+- barras `#4E79A7`;
+- aproximadamente 90% de opacidade;
+- sem borda;
+- rótulos percentuais.
+
+Na comparação por Rede são utilizadas cores distintas porque representam categorias analíticas diferentes:
+
+- Privada: azul;
+- Pública: laranja.
+
+### 13.8 Interação
+
+A principal interação da tela segue o fluxo:
+
+`Visão Geral → seleção do indicador → detalhamento por Rede`
+
+Foi incluída orientação visual para indicar que os elementos da visão geral são interativos.
+
+Dessa forma, não foi necessário manter um seletor de parâmetro separado no dashboard.
+
+### 13.9 Validação
+
+Foram testados:
+
+- filtros de Ano;
+- Região;
+- UF;
+- Rede;
+- Localização;
+- percentuais da visão geral;
+- comparação Pública × Privada;
+- ação de parâmetro;
+- título dinâmico;
+- alteração entre diferentes indicadores;
+- manutenção da escala entre `0% e 100%`.
+
+O comportamento funcional do dashboard foi validado antes da conclusão da etapa.
