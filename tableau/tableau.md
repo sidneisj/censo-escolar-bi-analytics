@@ -1366,3 +1366,129 @@ Foram testados:
 - manutenção da escala entre `0% e 100%`.
 
 O comportamento funcional do dashboard foi validado antes da conclusão da etapa.
+
+---
+
+## 14. Dashboard Evolução Histórica
+
+Foi implementado o dashboard:
+
+`D02 - Evolução Histórica`
+
+O objetivo da tela é apresentar a evolução dos principais indicadores educacionais ao longo do período de 2019 a 2025, permitindo também análises por diferentes recortes geográficos e administrativos.
+
+### 14.1 Estrutura
+
+O dashboard mantém o padrão visual do projeto:
+
+- layout desktop `1200 × 800`;
+- título principal do projeto;
+- subtítulo específico da análise;
+- filtros superiores;
+- quatro gráficos de evolução histórica organizados em grade `2 × 2`;
+- rodapé com fonte e período analisado.
+
+Foram utilizadas as worksheets:
+
+- `WS13 - Evolução de Matrículas`;
+- `WS14 - Evolução de Docentes`;
+- `WS15 - Evolução de Escolas Ativas`;
+- `WS16 - Evolução de Salas Utilizadas`.
+
+### 14.2 Indicadores analisados
+
+Os quatro indicadores apresentados são:
+
+- Matrículas;
+- Docentes;
+- Escolas Ativas;
+- Salas Utilizadas.
+
+Cada gráfico apresenta os sete anos disponíveis:
+
+`2019 → 2020 → 2021 → 2022 → 2023 → 2024 → 2025`
+
+Não foi incluído filtro de Ano no dashboard, pois o objetivo da tela é justamente preservar a visualização completa da série histórica.
+
+### 14.3 Filtros
+
+Foram disponibilizados:
+
+- Região;
+- UF;
+- Rede;
+- Localização.
+
+Estado padrão:
+
+`Todas as Regiões | Todas as UFs | Todas as Redes | Todas as Localizações`
+
+O filtro de UF permanece contextualizado pela Região selecionada.
+
+Os filtros atualizam simultaneamente os quatro gráficos históricos.
+
+### 14.4 Escalas dos gráficos
+
+Os eixos verticais utilizam:
+
+- intervalo automático;
+- zero não obrigatório.
+
+Essa configuração permite que a escala seja recalculada conforme os filtros aplicados.
+
+A decisão de não utilizar escalas fixas foi necessária porque valores absolutos podem variar significativamente entre Brasil, Regiões, UFs, Redes e Localizações.
+
+O eixo permanece visível para evitar interpretação incorreta das variações.
+
+### 14.5 Formatação numérica
+
+Foi adotada formatação simplificada nos eixos:
+
+- Matrículas: milhões;
+- Docentes: milhões;
+- Escolas Ativas: milhares;
+- Salas Utilizadas: milhões.
+
+A quantidade de casas decimais foi ajustada individualmente para preservar legibilidade sem excesso de informação.
+
+### 14.6 Rótulos
+
+Para reduzir poluição visual, os valores não são apresentados em todos os anos.
+
+Foram mantidos rótulos apenas nas extremidades das linhas:
+
+- primeiro ano: `2019`;
+- último ano: `2025`.
+
+Os anos intermediários permanecem disponíveis no eixo horizontal e nas informações da visualização.
+
+### 14.7 Identidade visual
+
+Os quatro gráficos utilizam:
+
+- gráfico de linha;
+- cor principal `#4E79A7`;
+- fundo branco;
+- bordas discretas;
+- ausência de títulos redundantes nos eixos;
+- espaçamento uniforme entre os blocos.
+
+Os quatro gráficos foram organizados em dois contêineres horizontais, com distribuição uniforme das worksheets.
+
+### 14.8 Validação
+
+Foram validados:
+
+- os sete anos da série histórica;
+- valores dos indicadores;
+- filtros de Região;
+- relacionamento Região → UF;
+- filtros de Rede;
+- filtros de Localização;
+- atualização simultânea dos quatro gráficos;
+- adaptação automática dos eixos;
+- manutenção dos rótulos apenas em 2019 e 2025.
+
+Após os testes, os filtros foram retornados ao estado padrão.
+
+O comportamento funcional e visual do dashboard foi considerado validado.
