@@ -1492,3 +1492,107 @@ Foram validados:
 Após os testes, os filtros foram retornados ao estado padrão.
 
 O comportamento funcional e visual do dashboard foi considerado validado.
+
+---
+
+## 15. Filtros, Ações e Navegação
+
+Foi realizada a padronização da experiência de navegação e das principais interações entre os dashboards do projeto.
+
+### 15.1 Navegação entre dashboards
+
+Foi implementado um menu de navegação no canto superior direito de todos os dashboards:
+
+`Panorama | Evolução | Geografia | Infraestrutura`
+
+Os destinos são:
+
+- Panorama → `D01 - Panorama Geral`;
+- Evolução → `D02 - Evolução Histórica`;
+- Geografia → `D03 - Geografia e Administração`;
+- Infraestrutura → `D04 - Infraestrutura Escolar`.
+
+O dashboard atualmente exibido recebe destaque visual com fundo cinza claro.
+
+O menu mantém posição, altura e distribuição semelhantes entre todas as telas, proporcionando continuidade visual durante a navegação.
+
+### 15.2 Padronização dos filtros
+
+Os filtros foram posicionados abaixo do título e subtítulo, com alinhamento à esquerda e apresentação compacta.
+
+Quando aplicável, foi mantida a seguinte ordem:
+
+`Ano → Região → UF → Rede → Localização`
+
+Cada dashboard utiliza somente os filtros relevantes para sua finalidade analítica.
+
+#### D01 - Panorama Geral
+
+- Ano;
+- Região;
+- UF;
+- Rede.
+
+#### D02 - Evolução Histórica
+
+- Região;
+- UF;
+- Rede;
+- Localização.
+
+O filtro de Ano não é utilizado nesse dashboard para preservar a visualização completa do período `2019–2025`.
+
+#### D03 - Geografia e Administração
+
+- Ano;
+- Rede;
+- Dependência Administrativa;
+- Localização.
+
+#### D04 - Infraestrutura Escolar
+
+- Ano;
+- Região;
+- UF;
+- Rede;
+- Localização.
+
+Nos dashboards que utilizam Região e UF, o filtro de UF apresenta somente valores relevantes para a Região selecionada.
+
+### 15.3 Ações interativas
+
+As ações foram utilizadas apenas quando acrescentam contexto analítico à visualização.
+
+#### D03 - Geografia e Administração
+
+O mapa permite selecionar uma UF para detalhar:
+
+- Matrículas por Rede;
+- Escolas Ativas por Dependência Administrativa.
+
+O ranking de Matrículas por UF permanece como referência nacional, permitindo comparar o estado selecionado com o contexto geral.
+
+#### D04 - Infraestrutura Escolar
+
+Foi implementada uma ação de parâmetro entre:
+
+`WS11 - Infraestrutura Geral`
+
+e
+
+`WS12 - Infraestrutura por Rede`.
+
+Ao selecionar um indicador de infraestrutura na visão geral, a comparação entre as redes Pública e Privada é atualizada automaticamente.
+
+A análise detalhada trabalha com um único indicador por vez.
+
+### 15.4 Padrão de interação
+
+As decisões de interação seguiram os seguintes princípios:
+
+- manter os dashboards simples;
+- evitar filtros e ações redundantes;
+- preservar contexto analítico;
+- utilizar interações somente quando acrescentam valor;
+- manter comportamento consistente entre as telas;
+- facilitar a navegação sem depender exclusivamente das abas do Tableau.
