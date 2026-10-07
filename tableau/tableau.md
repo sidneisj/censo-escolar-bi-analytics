@@ -858,9 +858,9 @@ A definição final de cores será realizada durante a construção visual, pres
 Os dashboards serão nomeados:
 
 - `D01 - Panorama Geral`
-- `D02 - Evolução Histórica`
-- `D03 - Geografia e Administração`
-- `D04 - Infraestrutura Escolar`
+- `D02 - Geografia e Administração`
+- `D03 - Infraestrutura Escolar`
+- `D04 - Evolução Histórica`
 
 As worksheets deverão utilizar prefixo `WS`.
 
@@ -1066,7 +1066,7 @@ O recurso nativo de Reverter do Tableau pode ser utilizado para retornar ao esta
 
 Foi implementado o dashboard:
 
-`D03 - Geografia e Administração`
+`D02 - Geografia e Administração`
 
 O objetivo da tela é permitir análise territorial das matrículas e exploração da estrutura administrativa das escolas brasileiras.
 
@@ -1186,7 +1186,7 @@ O refinamento específico de enquadramento e zoom do mapa será tratado separada
 
 Foi implementado o dashboard:
 
-`D04 - Infraestrutura Escolar`
+`D03 - Infraestrutura Escolar`
 
 O objetivo da tela é analisar a disponibilidade de recursos de infraestrutura nas escolas em atividade e permitir comparação entre as redes Pública e Privada.
 
@@ -1373,7 +1373,7 @@ O comportamento funcional do dashboard foi validado antes da conclusão da etapa
 
 Foi implementado o dashboard:
 
-`D02 - Evolução Histórica`
+`D04 - Evolução Histórica`
 
 O objetivo da tela é apresentar a evolução dos principais indicadores educacionais ao longo do período de 2019 a 2025, permitindo também análises por diferentes recortes geográficos e administrativos.
 
@@ -1508,9 +1508,9 @@ Foi implementado um menu de navegação no canto superior direito de todos os da
 Os destinos são:
 
 - Panorama → `D01 - Panorama Geral`;
-- Evolução → `D02 - Evolução Histórica`;
-- Geografia → `D03 - Geografia e Administração`;
-- Infraestrutura → `D04 - Infraestrutura Escolar`.
+- Geografia → `D02 - Geografia e Administração`;
+- Infraestrutura → `D03 - Infraestrutura Escolar`.
+- Evolução → `D04 - Evolução Histórica`;
 
 O dashboard atualmente exibido recebe destaque visual com fundo cinza claro.
 
@@ -1533,23 +1533,14 @@ Cada dashboard utiliza somente os filtros relevantes para sua finalidade analít
 - UF;
 - Rede.
 
-#### D02 - Evolução Histórica
-
-- Região;
-- UF;
-- Rede;
-- Localização.
-
-O filtro de Ano não é utilizado nesse dashboard para preservar a visualização completa do período `2019–2025`.
-
-#### D03 - Geografia e Administração
+#### D02 - Geografia e Administração
 
 - Ano;
 - Rede;
 - Dependência Administrativa;
 - Localização.
 
-#### D04 - Infraestrutura Escolar
+#### D03 - Infraestrutura Escolar
 
 - Ano;
 - Região;
@@ -1559,11 +1550,20 @@ O filtro de Ano não é utilizado nesse dashboard para preservar a visualizaçã
 
 Nos dashboards que utilizam Região e UF, o filtro de UF apresenta somente valores relevantes para a Região selecionada.
 
+#### D04 - Evolução Histórica
+
+- Região;
+- UF;
+- Rede;
+- Localização.
+
+O filtro de Ano não é utilizado nesse dashboard para preservar a visualização completa do período `2019–2025`.
+
 ### 15.3 Ações interativas
 
 As ações foram utilizadas apenas quando acrescentam contexto analítico à visualização.
 
-#### D03 - Geografia e Administração
+#### D02 - Geografia e Administração
 
 O mapa permite selecionar uma UF para detalhar:
 
@@ -1572,7 +1572,7 @@ O mapa permite selecionar uma UF para detalhar:
 
 O ranking de Matrículas por UF permanece como referência nacional, permitindo comparar o estado selecionado com o contexto geral.
 
-#### D04 - Infraestrutura Escolar
+#### D03 - Infraestrutura Escolar
 
 Foi implementada uma ação de parâmetro entre:
 
@@ -1596,3 +1596,83 @@ As decisões de interação seguiram os seguintes princípios:
 - utilizar interações somente quando acrescentam valor;
 - manter comportamento consistente entre as telas;
 - facilitar a navegação sem depender exclusivamente das abas do Tableau.
+
+---
+
+## 16. Validação Final dos Dashboards
+
+Foi realizada a validação final dos dashboards desenvolvidos na milestone M6 — Construção dos Dashboards.
+
+A estrutura definitiva do projeto no Tableau ficou organizada em:
+
+- `D01 - Panorama Geral`;
+- `D02 - Geografia e Administração`;
+- `D03 - Infraestrutura Escolar`;
+- `D04 - Evolução Histórica`.
+
+### 16.1 Padronização visual
+
+Foram revisados e padronizados:
+
+- tamanho dos dashboards em `1200 × 800`;
+- título principal;
+- subtítulos;
+- posição e formatação dos filtros;
+- menu de navegação;
+- alinhamentos;
+- espaçamentos;
+- bordas dos blocos analíticos;
+- títulos das worksheets;
+- formatação numérica;
+- identidade visual;
+- rodapé.
+
+O rodapé utilizado nos dashboards segue o padrão:
+
+`Fonte: INEP — Censo Escolar | Período analisado: 2019–2025`
+
+### 16.2 Navegação
+
+Todos os dashboards possuem navegação direta entre:
+
+`Panorama | Evolução | Geografia | Infraestrutura`
+
+A página atual recebe destaque visual.
+
+Os destinos foram revisados após a reorganização da numeração dos dashboards.
+
+### 16.3 Filtros e interações
+
+Foram revisados:
+
+- filtros disponíveis em cada dashboard;
+- relação Região → UF;
+- atualização das worksheets pelos filtros;
+- ação geográfica do mapa;
+- ação de parâmetro da análise de infraestrutura;
+- comportamento das séries históricas;
+- escalas automáticas;
+- títulos e rótulos dinâmicos.
+
+Não foram adicionadas interações redundantes, mantendo apenas aquelas que contribuem para a análise.
+
+### 16.4 Estrutura final
+
+A sequência definitiva dos dashboards é:
+
+1. `D01 - Panorama Geral`
+2. `D02 - Geografia e Administração`
+3. `D03 - Infraestrutura Escolar`
+4. `D04 - Evolução Histórica`
+
+A ordem foi definida para representar uma progressão analítica:
+
+`Visão Geral → Distribuição Geográfica → Infraestrutura → Evolução Temporal`
+
+### 16.5 Manutenção
+
+A conclusão da M6 representa o encerramento da construção inicial dos dashboards.
+
+Melhorias futuras de apresentação, usabilidade, formatação, atualização dos dados e evolução das visualizações serão tratadas no processo de manutenção contínua previsto nas etapas posteriores do projeto.
+
+Com a conclusão desta validação, os dashboards estão prontos para a etapa de publicação e documentação final.
