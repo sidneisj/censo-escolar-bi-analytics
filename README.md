@@ -119,17 +119,25 @@ A solução foi organizada em quatro dashboards analíticos:
 
 Apresenta uma visão consolidada dos principais indicadores do Censo Escolar, incluindo matrículas, docentes, escolas ativas e salas utilizadas.
 
+![D01 — Panorama Geral](assets/dashboards/d01-panorama-geral.png)
+
 ### D02 — Geografia e Administração
 
 Explora a distribuição territorial dos dados educacionais e permite análises por Unidade da Federação, Rede e Dependência Administrativa.
+
+![D02 — Geografia e Administração](assets/dashboards/d02-geografia-administracao.png)
 
 ### D03 — Infraestrutura Escolar
 
 Analisa a disponibilidade de recursos e infraestrutura nas escolas, permitindo também comparar os indicadores entre as redes Pública e Privada.
 
+![D03 — Infraestrutura Escolar](assets/dashboards/d03-infraestrutura-escolar.png)
+
 ### D04 — Evolução Histórica
 
 Apresenta a evolução dos principais indicadores educacionais entre **2019 e 2025**, permitindo acompanhar tendências ao longo do período analisado.
+
+![D04 — Evolução Histórica](assets/dashboards/d04-evolucao-historica.png)
 
 ## 🌐 Tableau Public
 
