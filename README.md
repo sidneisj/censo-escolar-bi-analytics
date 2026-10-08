@@ -176,6 +176,12 @@ Entre os principais documentos estão:
 
 O acompanhamento das atividades é realizado por meio do **GitHub Projects**, utilizando Issues e Milestones para registrar a evolução do projeto.
 
+## 📄 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+> **Licenciamento:** o código e os materiais autorais deste repositório são disponibilizados sob a licença MIT. Os dados utilizados são provenientes do INEP e permanecem sujeitos às condições e políticas da fonte oficial.
+
 ---
 
 ## ✅ Conclusão
