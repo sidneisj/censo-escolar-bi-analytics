@@ -76,8 +76,8 @@ censo-escolar-bi/
 * [x] **M4 — Tratamento e transformação**
 * [x] **M5 — Modelagem dos dados**
 * [x] **M6 — Construção dos Dashboards**
-* [ ] **M7 — Publicação e Documentação**
-* [ ] **M8 — Manutenção e Atualização**
+* [x] **M7 — Publicação e Documentação**
+* 🔄 **M8 — Manutenção e Atualização** - etapa contínua
 
 Atualmente, o projeto encontra-se na **M7 — Publicação e Documentação**, com os dashboards já construídos, validados e publicados no Tableau Public.
 
