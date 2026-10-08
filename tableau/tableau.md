@@ -1676,3 +1676,35 @@ A conclusão da M6 representa o encerramento da construção inicial dos dashboa
 Melhorias futuras de apresentação, usabilidade, formatação, atualização dos dados e evolução das visualizações serão tratadas no processo de manutenção contínua previsto nas etapas posteriores do projeto.
 
 Com a conclusão desta validação, os dashboards estão prontos para a etapa de publicação e documentação final.
+
+---
+
+## 18. Publicação no Tableau Public
+
+O projeto foi publicado no Tableau Public e disponibilizado para acesso público.
+
+### 18.1 URL oficial
+
+A visualização pública está disponível em:
+
+https://public.tableau.com/app/profile/sidneisouzajr/viz/CensoEscolar-BIAnalytics/D01-PanoramaGeral
+
+O acesso inicial direciona para:
+
+`D01 - Panorama Geral`
+
+A partir dele, o usuário pode navegar pelos quatro dashboards utilizando o menu interno:
+
+`Panorama | Evolução | Geografia | Infraestrutura`
+
+### 18.2 Validação da publicação
+
+A versão publicada foi acessada externamente para confirmar:
+
+- acesso público sem necessidade de autenticação;
+- carregamento do `D01 - Panorama Geral`;
+- disponibilidade dos quatro dashboards;
+- funcionamento da navegação interna;
+- apresentação correta do projeto no Tableau Public.
+
+Com a validação concluída, a URL foi definida como endereço público oficial do projeto.
