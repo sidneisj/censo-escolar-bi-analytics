@@ -4,6 +4,8 @@ Projeto de **BI/Analytics** desenvolvido a partir de dados públicos do **Censo 
 
 O projeto transforma dados educacionais públicos em informações analíticas por meio de processos de exploração, qualidade, tratamento, modelagem e visualização de dados, utilizando **Python** e **Tableau** ao longo do ciclo analítico.
 
+> Projeto desenvolvido como estudo aplicado e portfólio profissional, demonstrando práticas de Business Intelligence, análise de dados, qualidade, governança, tratamento, modelagem e visualização de dados.
+
 ## 🎯 Objetivo
 
 Desenvolver uma solução analítica para explorar informações da Educação Básica brasileira, permitindo análises sobre:
@@ -170,10 +172,14 @@ A documentação contempla diferentes etapas do ciclo de dados, incluindo:
 Entre os principais documentos estão:
 
 * [`documentation/fonte_dados.md`](documentation/fonte_dados.md) — origem e rastreabilidade dos dados;
-* [`tableau/tableau.md`](tableau/tableau.md) — desenvolvimento, decisões e validações relacionadas aos dashboards.
+* [`documentation/tableau.md`](documentation/tableau.md) — desenvolvimento, decisões e validações relacionadas aos dashboards.
 
 O acompanhamento das atividades é realizado por meio do **GitHub Projects**, utilizando Issues e Milestones para registrar a evolução do projeto.
 
 ---
 
-**Projeto desenvolvido para fins de estudo, portfólio profissional e demonstração de práticas de Business Intelligence e análise de dados.**
+## ✅ Conclusão
+
+A versão inicial do projeto está concluída e publicada, reunindo tratamento de dados, modelagem analítica, documentação técnica e quatro dashboards interativos no Tableau Public.
+
+A solução permanece em evolução contínua por meio da M8 — Manutenção e Atualização.
