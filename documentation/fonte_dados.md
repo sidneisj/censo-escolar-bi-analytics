@@ -4,55 +4,111 @@
 
 Os dados utilizados neste projeto são provenientes dos **Microdados do Censo Escolar da Educação Básica**, disponibilizados oficialmente pelo **Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP)**.
 
-### Fonte oficial
+## Fonte oficial
 
 **Instituição:** Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira — INEP
 
 **Conjunto de dados:** Microdados do Censo Escolar da Educação Básica
 
-**Ano de referência:** 2025
+**Período analisado:** 2019 a 2025
 
 **Página oficial:**
 https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar
 
-### Arquivos selecionados
+## Bases utilizadas
 
-Para a primeira versão do projeto foram selecionados os seguintes arquivos:
+O projeto utiliza dados do Censo Escolar referentes ao período de **2019 a 2025**.
 
-* `Tabela_Escola_2025_V2.csv`
-* `Tabela_Matricula_2025_V2.csv`
-* `Tabela_Docente_2025_V2.csv`
+Durante as etapas iniciais de exploração e definição do modelo analítico, foram analisadas principalmente informações provenientes das tabelas de:
 
-As demais tabelas disponibilizadas no pacote não fazem parte do escopo inicial, mas poderão ser utilizadas em etapas futuras caso novas necessidades de análise sejam identificadas.
+* Escola;
+* Matrícula;
+* Docente.
 
-### Versão e documentação
+Para o ano de 2025, os arquivos utilizados como referência foram:
 
-Os arquivos foram obtidos a partir do pacote oficial de Microdados do Censo Escolar 2025 disponibilizado pelo INEP.
+* `Tabela_Escola_2025_V2.csv`;
+* `Tabela_Matricula_2025_V2.csv`;
+* `Tabela_Docente_2025_V2.csv`.
 
-O pacote também contém documentação complementar, incluindo:
+A análise de comparabilidade histórica permitiu identificar e selecionar as variáveis adequadas para utilização ao longo do período de 2019 a 2025.
 
-* manual do usuário;
+## Versão e documentação oficial
+
+A documentação técnica utilizada como referência foi obtida a partir do pacote oficial dos **Microdados do Censo Escolar 2025**, disponibilizado pelo INEP.
+
+O pacote contém materiais complementares, incluindo:
+
+* leia-me e orientações de utilização;
 * dicionário de dados;
 * questionários;
 * documentos técnicos e metodológicos;
 * arquivo de verificação de integridade MD5.
 
-### Data de obtenção
+Parte dessa documentação oficial é mantida no repositório em:
 
-**Data de obtenção:** 18/09/2026
+`documentation/INEP/`
 
-### Integridade e rastreabilidade
+## Data de obtenção
 
-Os arquivos originais foram obtidos diretamente da fonte oficial e serão preservados sem alterações.
+**Data de obtenção da documentação e dos microdados de referência de 2025:** 18/09/2026
 
-O pacote disponibilizado pelo INEP contém o arquivo `md5_microdados_ed_basica_2025.txt`, utilizado para verificação da integridade dos arquivos distribuídos.
+## Integridade e rastreabilidade
 
-Os dados originais serão mantidos na área `data/raw/`, enquanto os dados submetidos a processos de tratamento e transformação serão armazenados posteriormente em `data/processed/`.
+Os arquivos originais foram obtidos diretamente da fonte oficial e preservados sem alterações durante o processo de aquisição.
 
-### Integração das bases
+O pacote de 2025 disponibilizado pelo INEP contém o arquivo:
 
-As tabelas selecionadas são organizadas por estabelecimento de ensino e podem ser relacionadas por meio da variável `CO_ENTIDADE`, utilizada como chave de integração entre as diferentes bases do Censo Escolar.
+`md5_microdados_ed_basica_2025.txt`
 
-### Observação
+utilizado como referência para verificação da integridade dos arquivos distribuídos.
 
-A documentação e as regras metodológicas fornecidas pelo INEP serão consideradas durante as etapas de exploração, qualidade, tratamento e modelagem dos dados.
+Os dados originais são mantidos na área:
+
+`data/raw/`
+
+Os dados resultantes dos processos de tratamento, padronização, consolidação e preparação para análise são armazenados em:
+
+`data/processed/`
+
+A base analítica final utilizada no Tableau é:
+
+`data/processed/censo_escolar_tableau_2019_2025.csv`
+
+## Integração e consolidação
+
+A variável:
+
+`CO_ENTIDADE`
+
+é utilizada como identificador da escola nas bases do Censo Escolar.
+
+Para análise histórica, a combinação entre escola e ano permite identificar cada observação da base consolidada, cuja granularidade final é:
+
+`Escola × Ano`
+
+O processo de consolidação preserva as dimensões e indicadores necessários às análises geográficas, administrativas, de infraestrutura e evolução histórica realizadas no projeto.
+
+## Comparabilidade histórica
+
+Antes da consolidação das bases de 2019 a 2025, foram avaliadas alterações de disponibilidade, nomenclatura e significado das variáveis ao longo dos anos.
+
+As evidências dessas análises estão registradas em arquivos da pasta:
+
+`documentation/exploracao/`
+
+incluindo verificações de:
+
+* disponibilidade das variáveis;
+* comparabilidade histórica;
+* categorias;
+* valores ausentes;
+* granularidade;
+* indicadores;
+* validações da base consolidada.
+
+## Observação
+
+As regras, definições e orientações metodológicas fornecidas pelo INEP foram consideradas durante as etapas de exploração, qualidade, tratamento, modelagem e construção das análises.
+
+A documentação técnica do projeto busca preservar a rastreabilidade entre os dados de origem, as transformações realizadas e a base analítica utilizada nos dashboards.

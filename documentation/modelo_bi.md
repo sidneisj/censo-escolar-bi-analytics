@@ -10,9 +10,9 @@ A modelagem tem como objetivo fornecer uma estrutura analítica simples, rastre�
 
 ## 2. Estratégia de modelagem adotada
 
-Para a primeira versão do projeto foi adotada uma **tabela analítica única e desnormalizada**.
+Para a versão atual do projeto foi adotada uma **tabela analítica única e desnormalizada**.
 
-A fonte utilizada pelo Tableau será:
+A fonte utilizada pelo Tableau é:
 
 `data/processed/censo_escolar_tableau_2019_2025.csv`
 
@@ -102,7 +102,7 @@ O campo:
 
 identifica o ano de referência do Censo Escolar.
 
-Ele será utilizado como principal dimensão temporal do modelo.
+Ele é utilizado como principal dimensão temporal do modelo.
 
 A combinação do ano com o código da escola determina a granularidade da base.
 
@@ -190,7 +190,7 @@ Por exemplo, uma escola presente de 2019 a 2025 corresponde a:
 
 Portanto, métricas relacionadas à quantidade de escolas deverão considerar explicitamente o contexto temporal utilizado no dashboard.
 
-As regras definitivas de agregação serão documentadas na issue dedicada às métricas e regras de cálculo.
+As regras de agregação adotadas no projeto estão documentadas nas seções de métricas, KPIs e regras de cálculo deste documento e foram posteriormente aplicadas na construção dos dashboards no Tableau.
 
 ---
 
@@ -326,7 +326,7 @@ Exemplos:
 - quantidade de escolas ativas;
 - indicadores e percentuais derivados.
 
-A definição detalhada das dimensões, hierarquias, métricas e regras de agregação será realizada nas próximas atividades da M5.
+A definição detalhada das dimensões, hierarquias, métricas e regras de agregação está registrada nas seções seguintes e serviu como base para a implementação do modelo no Tableau.
 
 ---
 
@@ -363,7 +363,7 @@ A estratégia adotada mantém o modelo suficientemente simples para construção
 
 Mesmo utilizando uma tabela analítica única, os atributos do modelo são organizados conceitualmente em dimensões.
 
-Essas dimensões serão utilizadas no Tableau para filtros, segmentações, agrupamentos, detalhamento e navegação entre diferentes níveis de análise.
+Essas dimensões são utilizadas no Tableau para filtros, segmentações, agrupamentos, detalhamento e navegação entre diferentes níveis de análise.
 
 ---
 
@@ -377,7 +377,7 @@ O modelo contém dados anuais do período:
 
 `2019 a 2025`
 
-Como o Censo Escolar utilizado no projeto possui periodicidade anual, não serão criados níveis artificiais de trimestre, mês ou dia.
+Como o Censo Escolar utilizado no projeto possui periodicidade anual, não foram criados níveis artificiais de trimestre, mês ou dia.
 
 **Hierarquia:**
 
@@ -427,13 +427,17 @@ A dimensão geográfica é composta pelos campos:
 - `CO_MUNICIPIO`;
 - `NO_MUNICIPIO`.
 
-A principal hierarquia geográfica do projeto será:
+A hierarquia geográfica conceitual do projeto é:
 
 `Brasil → Região → UF → Município`
 
-O nível Brasil representa o total nacional e não necessita de uma coluna própria na base.
+No Tableau, foi configurada a hierarquia:
 
-No Tableau, essa hierarquia permitirá navegar progressivamente do panorama nacional até o nível municipal.
+`Região → UF → Município`
+
+O nível Brasil representa o contexto nacional da análise e também é utilizado como referência geográfica para o reconhecimento adequado das localidades pelo Tableau.
+
+Essa estrutura permite análises progressivas em diferentes níveis territoriais.
 
 **Principais usos:**
 
@@ -671,7 +675,7 @@ Filtros poderão ser combinados conforme o objetivo de cada dashboard.
 | Situação | `DS_SITUACAO_FUNCIONAMENTO`, `FL_ESCOLA_ATIVA` | — |
 | Infraestrutura | indicadores `IN_*` selecionados | — |
 
-As dimensões definidas atendem às perguntas analíticas estabelecidas para o projeto e serão utilizadas como base para definição das métricas e KPIs na próxima etapa.
+As dimensões definidas atendem às perguntas analíticas estabelecidas para o projeto e foram utilizadas como base para a definição das métricas, KPIs e visualizações implementadas no Tableau.
 
 ---
 
@@ -696,7 +700,7 @@ A base possui granularidade:
 
 Por esse motivo, os principais KPIs quantitativos devem sempre ser interpretados dentro de um contexto temporal.
 
-No dashboard, os valores em destaque deverão representar preferencialmente um único ano selecionado.
+Nos dashboards que apresentam uma fotografia dos indicadores, o filtro de Ano define o período analisado.
 
 Exemplo:
 
@@ -706,7 +710,7 @@ Nesse contexto, os KPIs representam a situação observada no Censo Escolar de 2
 
 Ao analisar vários anos simultaneamente, a soma de determinados indicadores representa acumulados de registros anuais e não necessariamente uma quantidade única de entidades.
 
-As regras detalhadas de agregação serão formalizadas na issue específica de cálculos do Tableau.
+As regras de agregação utilizadas no projeto estão documentadas nas seções seguintes.
 
 ---
 
@@ -1011,39 +1015,37 @@ Nesse campo:
 
 `1 = inexistência de recursos de acessibilidade`
 
-Por isso, ele não deverá ser apresentado diretamente como “escolas com acessibilidade”.
+`0 = existência de recursos de acessibilidade`
 
-Caso seja necessário apresentar um indicador positivo de acessibilidade, deverá ser criado um campo calculado específico no Tableau, respeitando os valores válidos e ausentes.
+Para facilitar a interpretação no dashboard, foi criado no Tableau o campo calculado:
 
-A regra será formalizada na etapa de campos calculados.
+`Acessibilidade - Escola Ativa`
+
+A regra utilizada preserva valores nulos e inverte somente os registros válidos, permitindo apresentar o indicador como percentual positivo de escolas com recursos de acessibilidade.
+
+A fórmula utilizada está documentada na seção de regras de agregação e campos calculados.
 
 ---
 
 ## 10.11 Métricas de Evolução Histórica
 
-Os principais indicadores deverão permitir análise ao longo de 2019 a 2025.
+A análise histórica utiliza o período de 2019 a 2025.
 
-Serão analisadas as evoluções de:
+No dashboard de Evolução Histórica são apresentados os valores anuais de:
 
-- Matrículas;
-- Docentes;
-- Escolas Ativas;
-- Salas Utilizadas;
-- indicadores selecionados de infraestrutura.
+* Matrículas;
+* Docentes;
+* Escolas Ativas;
+* Salas Utilizadas.
 
-A análise histórica poderá utilizar:
+A série temporal permite identificar tendências, aumentos, reduções e mudanças de comportamento ao longo do período analisado.
 
-- valor absoluto anual;
-- diferença absoluta em relação ao ano anterior;
-- variação percentual em relação ao ano anterior.
+O modelo também permite a criação futura de métricas adicionais, como:
 
-Exemplo conceitual:
+* diferença absoluta em relação ao ano anterior;
+* variação percentual em relação ao ano anterior.
 
-`Variação % de Matrículas`
-
-compara o total de matrículas de um ano com o total do ano imediatamente anterior.
-
-A fórmula e o comportamento desses cálculos no Tableau serão definidos na issue de regras de agregação e campos calculados.
+Esses cálculos são documentados conceitualmente nas regras de agregação, mas não fazem parte da visualização principal da versão atual do dashboard.
 
 ---
 
@@ -1075,7 +1077,7 @@ Os indicadores prioritários para apresentação em destaque serão:
 | Escolas Ativas | `FL_ESCOLA_ATIVA` | Soma em contexto anual |
 | Salas Utilizadas | `QT_SALAS_UTILIZADAS` | Soma |
 
-Esses KPIs formarão o panorama principal do sistema educacional no período selecionado.
+Esses KPIs formam o panorama principal do sistema educacional apresentado nos dashboards.
 
 ---
 
@@ -1292,7 +1294,7 @@ e não quantidade de escolas distintas.
 
 ---
 
-# 11.9 Indicadores de infraestrutura
+## 11.9 Indicadores de infraestrutura
 
 Os indicadores de infraestrutura possuem três estados possíveis:
 
@@ -1435,7 +1437,7 @@ AVG([Acessibilidade - Escola Ativa])
 
 ---
 
-# 11.14 Participação percentual por categoria
+## 11.14 Participação percentual por categoria
 
 Para análises como participação das matrículas por rede, poderá ser utilizada a lógica:
 
@@ -1517,7 +1519,7 @@ Essa decisão será tomada durante a implementação visual.
 
 ---
 
-# 11.18 Regras para valores ausentes
+## 11.18 Regras para valores ausentes
 
 Os valores `NULL` possuem significado diferente de zero e deverão ser preservados.
 
@@ -1541,50 +1543,58 @@ sem avaliação prévia do significado do valor ausente.
 
 ## 11.19 Regras para filtros
 
-Os filtros deverão atuar sobre as dimensões e não alterar a interpretação original das medidas.
+Os filtros foram definidos de acordo com o objetivo analítico de cada dashboard.
 
-Principais filtros previstos:
+### D01 — Panorama Geral
 
-- Ano;
-- Região;
-- UF;
-- Município;
-- Rede;
-- Dependência;
-- Localização;
-- Situação da Escola.
+* Ano;
+* Região;
+* UF;
+* Rede.
 
-Para os dashboards principais, deverá existir um contexto temporal claramente visível para evitar interpretação de valores acumulados de vários anos como fotografias de um único período.
+### D02 — Geografia e Administração
+
+* Ano;
+* Rede;
+* Dependência Administrativa;
+* Localização.
+
+### D03 — Infraestrutura Escolar
+
+* Ano;
+* Região;
+* UF;
+* Rede;
+* Localização.
+
+### D04 — Evolução Histórica
+
+* Região;
+* UF;
+* Rede;
+* Localização.
+
+O filtro de Ano não é utilizado no dashboard de Evolução Histórica, pois a finalidade dessa visualização é preservar simultaneamente toda a série de 2019 a 2025.
+
+Nos dashboards com filtro de Região e UF, a seleção de UF considera apenas os valores relevantes para a Região escolhida.
 
 ---
 
 ## 11.20 Regras para filtros geográficos
 
-A hierarquia será:
+A hierarquia conceitual do modelo é:
 
-```text
-Brasil
-↓
-Região
-↓
-UF
-↓
-Município
-```
+`Brasil → Região → UF → Município`
 
-Os filtros inferiores deverão respeitar os níveis superiores.
+Nos dashboards que utilizam Região e UF como filtros, foi configurada dependência entre esses níveis.
 
-Exemplo:
+Por exemplo, ao selecionar:
 
-ao selecionar:
+`Região = Sudeste`
 
-```text
-Região = Sudeste
-```
+o filtro de UF apresenta apenas estados pertencentes à Região Sudeste.
 
-a lista de UFs deverá representar apenas estados pertencentes ao Sudeste.
-
-O mesmo princípio será utilizado entre UF e Município.
+O nível Município permanece disponível no modelo analítico para análises e possíveis evoluções futuras, mas não é utilizado como filtro principal nos dashboards da versão atual.
 
 ---
 
@@ -1639,4 +1649,4 @@ Os nomes físicos serão preservados na fonte de dados para manter rastreabilida
 | Evolução absoluta | valor atual − valor anterior |
 | Evolução percentual | `(atual − anterior) / anterior` |
 
-Essas regras serão utilizadas na validação do modelo analítico e, posteriormente, na implementação das visualizações no Tableau.
+Essas regras foram utilizadas na validação do modelo analítico e orientaram a implementação das visualizações, filtros, cálculos e indicadores no Tableau.

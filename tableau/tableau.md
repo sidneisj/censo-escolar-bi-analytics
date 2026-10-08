@@ -315,7 +315,9 @@ Com isso, as hierarquias e os principais campos calculados estão prontos para u
 
 ---
 
-## 10. Estrutura visual e wireframes dos dashboards
+## 10. Planejamento visual e wireframes dos dashboards
+
+> Esta seção registra o planejamento visual elaborado antes da implementação definitiva dos dashboards. Algumas decisões foram posteriormente refinadas durante a construção e validação das telas. A configuração final está documentada nas seções 11 a 16.
 
 Antes da construção definitiva das visualizações foi definida a arquitetura visual dos dashboards do projeto.
 
@@ -325,14 +327,14 @@ O objetivo é manter uma experiência consistente entre as diferentes análises 
 
 ## 10.1 Estrutura geral
 
-O projeto será composto por quatro dashboards principais:
+O projeto foi estruturado em quatro dashboards principais:
 
-1. **Panorama Geral**
-2. **Evolução Histórica**
-3. **Geografia e Estrutura Administrativa**
-4. **Infraestrutura Escolar**
+1. **D01 — Panorama Geral**
+2. **D02 — Geografia e Administração**
+3. **D03 — Infraestrutura Escolar**
+4. **D04 — Evolução Histórica**
 
-Cada dashboard possuirá um objetivo analítico específico, evitando repetição excessiva de informações.
+Cada dashboard possui um objetivo analítico específico, evitando repetição excessiva de informações.
 
 ---
 
@@ -377,7 +379,7 @@ A implementação das ações de navegação será realizada posteriormente.
 
 ---
 
-# 10.4 Dashboard 1 — Panorama Geral
+# 10.4 Dashboard D01 — Panorama Geral
 
 ## Objetivo
 
@@ -506,7 +508,7 @@ O filtro Ano deverá permanecer claramente visível.
 
 ---
 
-# 10.5 Dashboard 2 — Evolução Histórica
+# 10.5 Dashboard D04 — Evolução Histórica
 
 ## Objetivo
 
@@ -569,7 +571,6 @@ As referências deverão ser comparadas com:
 - Região;
 - UF;
 - Rede;
-- Dependência Administrativa;
 - Localização.
 
 O filtro de Ano não será utilizado como filtro de um único período nessa tela, pois o objetivo é justamente preservar a série temporal.
@@ -600,7 +601,7 @@ O filtro de Ano não será utilizado como filtro de um único período nessa tel
 
 ---
 
-# 10.6 Dashboard 3 — Geografia e Estrutura Administrativa
+# 10.6 Dashboard D02 — Geografia e Administração
 
 ## Objetivo
 
@@ -713,7 +714,7 @@ Região, UF e Município poderão ser utilizados pela própria interação geogr
 
 ---
 
-# 10.7 Dashboard 4 — Infraestrutura Escolar
+# 10.7 Dashboard D03 — Infraestrutura Escolar
 
 ## Objetivo
 
@@ -822,10 +823,10 @@ A configuração inicial será:
 
 | Dashboard | Filtros |
 |---|---|
-| Panorama Geral | Ano, Região, UF, Rede |
-| Evolução Histórica | Região, UF, Rede, Dependência, Localização |
-| Geografia | Ano, Rede, Dependência, Localização |
-| Infraestrutura | Ano, Região, UF, Rede, Localização |
+| D01 — Panorama Geral | Ano, Região, UF, Rede |
+| D02 — Geografia e Administração | Ano, Rede, Dependência Administrativa, Localização |
+| D03 — Infraestrutura Escolar | Ano, Região, UF, Rede, Localização |
+| D04 — Evolução Histórica | Região, UF, Rede, Localização |
 
 Filtros adicionais poderão ser incorporados somente quando trouxerem benefício analítico claro.
 
@@ -887,7 +888,9 @@ A construção seguirá a ordem das issues da M6:
 5. filtros, ações e navegação;
 6. validação final.
 
-Embora Evolução Histórica seja o segundo dashboard na navegação, sua construção ocorrerá após as demais telas conforme a organização das issues do projeto.
+Embora a ordem de implementação tenha seguido as issues da M6, a numeração definitiva dos dashboards foi posteriormente reorganizada para:
+
+`D01 Panorama → D02 Geografia → D03 Infraestrutura → D04 Evolução`
 
 ---
 
@@ -1509,8 +1512,8 @@ Os destinos são:
 
 - Panorama → `D01 - Panorama Geral`;
 - Geografia → `D02 - Geografia e Administração`;
-- Infraestrutura → `D03 - Infraestrutura Escolar`.
-- Evolução → `D04 - Evolução Histórica`;
+- Infraestrutura → `D03 - Infraestrutura Escolar`;
+- Evolução → `D04 - Evolução Histórica`.
 
 O dashboard atualmente exibido recebe destaque visual com fundo cinza claro.
 
@@ -1676,6 +1679,59 @@ A conclusão da M6 representa o encerramento da construção inicial dos dashboa
 Melhorias futuras de apresentação, usabilidade, formatação, atualização dos dados e evolução das visualizações serão tratadas no processo de manutenção contínua previsto nas etapas posteriores do projeto.
 
 Com a conclusão desta validação, os dashboards estão prontos para a etapa de publicação e documentação final.
+
+---
+
+## 17. Preparação para Publicação no Tableau Public
+
+Antes da publicação definitiva, foi realizada uma revisão da estrutura do workbook e da experiência destinada ao usuário final.
+
+### 17.1 Estrutura publicada
+
+Foram definidos como dashboards públicos:
+
+1. `D01 - Panorama Geral`
+2. `D02 - Geografia e Administração`
+3. `D03 - Infraestrutura Escolar`
+4. `D04 - Evolução Histórica`
+
+O acesso inicial foi configurado para:
+
+`D01 - Panorama Geral`
+
+### 17.2 Identidade do projeto
+
+O projeto foi preparado para publicação com o título:
+
+**Censo Escolar — Panorama da Educação Brasileira**
+
+Descrição utilizada:
+
+> Projeto de BI/Analytics com dados públicos do Censo Escolar/INEP (2019–2025), reunindo indicadores educacionais, distribuição geográfica, infraestrutura escolar, evolução histórica, filtros e navegação interativa.
+
+### 17.3 Experiência de navegação
+
+A navegação pública utiliza o menu interno:
+
+`Panorama | Evolução | Geografia | Infraestrutura`
+
+As worksheets técnicas são utilizadas como componentes internos dos dashboards, enquanto a experiência principal do usuário ocorre por meio das quatro telas analíticas.
+
+### 17.4 Revisão pré-publicação
+
+Antes da publicação foram revisados:
+
+* nomes e ordem dos dashboards;
+* título e subtítulos;
+* filtros;
+* ações;
+* navegação;
+* formatação;
+* rodapés;
+* fonte de dados;
+* estado inicial das visualizações.
+
+Após essa revisão, o workbook foi considerado preparado para publicação no Tableau Public.
 
 ---
 
