@@ -28,3 +28,7 @@ Thumbs.db
 
 # PyCharm
 .idea/
+
+# Tableau
+tableau/*.twb
+tableau/*.twbx
