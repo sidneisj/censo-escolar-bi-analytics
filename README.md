@@ -79,7 +79,7 @@ censo-escolar-bi/
 * [x] **M7 — Publicação e Documentação**
 * 🔄 **M8 — Manutenção e Atualização** - etapa contínua
 
-Atualmente, o projeto encontra-se na **M7 — Publicação e Documentação**, com os dashboards já construídos, validados e publicados no Tableau Public.
+A entrega principal do projeto está concluída e publicada. A M8 representa o ciclo contínuo de manutenção da solução, incluindo atualização dos dados, validações, melhorias visuais e funcionais e atualização da documentação.
 
 ## 📌 Escopo analítico
 
